@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sample itinerary — strict</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { width: 794px; font-family: "Inter", sans-serif; color: #16222c; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .head { background: #122a3a; color: #ece7dc; padding: 44px 52px 34px; }
+    .brand { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; }
+    .brand b { color: #e9a23b; }
+    .title { font-family: "Saira Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 66px; line-height: .88; letter-spacing: -.01em; margin: 20px 0 0; }
+    .sub { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8ca3b2; margin-top: 12px; }
+    .sub b { color: #ece7dc; font-weight: 500; }
+    .tag { display: inline-block; background: #e9a23b; color: #122a3a; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; margin-top: 18px; }
+    .body { padding: 20px 52px 30px; }
+    .row { display: flex; gap: 26px; padding: 13px 0; border-bottom: 1px solid #e4e1d8; }
+    .row:last-child { border-bottom: none; }
+    .t { font-family: "JetBrains Mono", monospace; font-size: 13px; letter-spacing: .04em; color: #cf8a24; width: 62px; flex: none; padding-top: 3px; }
+    .n { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 23px; line-height: 1; letter-spacing: .01em; }
+    .note { font-size: 13px; color: #55636e; margin-top: 4px; }
+    .foot { padding: 18px 52px 40px; border-top: 2px solid #122a3a; margin-top: 6px; display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8896a0; }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <div class="brand">Serena Chua<b>·</b>Travel</div>
+    <h1 class="title">Day 01</h1>
+    <div class="sub">Your destination · Wakes <b>07:30</b> · Budget <b>mid</b></div>
+    <span class="tag">Strict — quarter-hour</span>
+  </div>
+
+  <div class="body">
+    <div class="row"><span class="t">08:00</span><span><span class="n">Breakfast</span><div class="note">At the hotel, kept light — long day ahead.</div></span></div>
+    <div class="row"><span class="t">08:45</span><span><span class="n">Old town on foot</span><div class="note">The historic quarter before the crowds arrive.</div></span></div>
+    <div class="row"><span class="t">10:30</span><span><span class="n">Central market</span><div class="note">Graze the stalls — a little of whatever's good today.</div></span></div>
+    <div class="row"><span class="t">12:15</span><span><span class="n">Lunch — booked</span><div class="note">A local counter I rate. Reserved, within budget.</div></span></div>
+    <div class="row"><span class="t">13:45</span><span><span class="n">City museum</span><div class="note">The one collection worth your afternoon.</div></span></div>
+    <div class="row"><span class="t">15:15</span><span><span class="n">Coffee</span><div class="note">A neighbourhood café — sit for twenty.</div></span></div>
+    <div class="row"><span class="t">16:00</span><span><span class="n">Viewpoint</span><div class="note">Up for golden hour over the rooftops.</div></span></div>
+    <div class="row"><span class="t">17:45</span><span><span class="n">Back to base</span><div class="note">Rest and reset before dinner.</div></span></div>
+    <div class="row"><span class="t">19:30</span><span><span class="n">Dinner — booked</span><div class="note">Table held under your name.</div></span></div>
+  </div>
+
+  <div class="foot">
+    <span>Planned for you · hello@serenachua.travel</span>
+    <span>Sample · Page 1</span>
+  </div>
+</body>
+</html>

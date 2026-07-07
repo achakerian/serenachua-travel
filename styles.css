@@ -198,22 +198,18 @@ body.page-sample { background: var(--bone); }
 #fmt-strict:checked  ~ .fmt--strict  { display: block; }
 #fmt-options:checked ~ .fmt--options { display: block; }
 
-/* options mode — pick one per band */
-.band { padding: 20px 0; border-bottom: 1px solid var(--bone-line); }
-.band:first-child { border-top: 1px solid var(--bone-line); }
-.band__label { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
-.band__label b { font-family: var(--display); text-transform: uppercase; font-size: 22px; letter-spacing: .02em; }
-.band__label span { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; color: var(--amber-deep); }
-.opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.opt { position: relative; border: 1px solid var(--bone-line); padding: 16px; cursor: pointer; display: block; transition: border-color .15s ease, background .15s ease; }
-.opt:hover { border-color: var(--navy); }
-.opt input { position: absolute; opacity: 0; }
-.opt__name { display: block; font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 19px; line-height: 1; }
-.opt__note { display: block; font-size: 13px; color: var(--muted); margin-top: 6px; }
-.opt:has(input:checked) { background: var(--navy); border-color: var(--navy); }
-.opt:has(input:checked) .opt__name { color: var(--bone); }
-.opt:has(input:checked) .opt__note { color: var(--sky); }
-.opt:has(input:focus-visible) { outline: 2px solid var(--amber); outline-offset: 2px; }
+/* document viewer — the actual PDF you'd receive, in an iframe */
+.viewer { border: 1px solid var(--navy); background: #fff; box-shadow: 0 24px 60px -34px rgba(18,42,58,.5); }
+.viewer__bar { display: flex; align-items: center; gap: 14px; background: var(--navy); color: var(--bone); padding: 12px 16px; }
+.viewer__dots { display: flex; gap: 6px; flex: none; }
+.viewer__dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--navy-line); display: block; }
+.viewer__file { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; opacity: .9; }
+.viewer__dl { margin-left: auto; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); text-decoration: none; white-space: nowrap; }
+.viewer__dl:hover { text-decoration: underline; }
+.viewer__frame { display: block; width: 100%; height: 760px; border: 0; background: #f1efe9; }
+.viewer__note { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--muted); margin: 16px 0 0; }
+.viewer__note a { color: var(--amber-deep); }
+@media (max-width: 600px) { .viewer__frame { height: 560px; } }
 
 /* =====================================================================
    PAGE: ABOUT  — passport spread

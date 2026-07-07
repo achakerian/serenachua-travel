@@ -27,8 +27,8 @@
     <header class="sample-head">
       <span class="code">A sample day</span>
       <h1>One day, two ways.</h1>
-      <p>Same city, same you. Choose a plan timed to the quarter-hour, or one that hands you options for each part of the day. This is the difference — flip it.</p>
-      <p class="sample-meta">Kyoto · Day 1 · Wakes 07:30 · Mid budget</p>
+      <p>Same day, same you — for any city. Choose a plan timed to the quarter-hour, or one that hands you options for each part of the day. This is the actual PDF you'd receive; flip the format.</p>
+      <p class="sample-meta">Your destination · Day 01 · Wakes 07:30 · Mid budget</p>
     </header>
 
     <section class="sample">
@@ -38,58 +38,33 @@
         <label for="fmt-strict">Strict · quarter-hour</label>
         <label for="fmt-options">Options · your pick</label>
       </div>
-      <p class="seg-cap">Planned to the minute, or opened up so you choose as you go.</p>
+      <p class="seg-cap">The same day as a finished PDF — planned to the minute, or opened up so you choose as you go.</p>
 
       <!-- STRICT -->
       <div class="fmt fmt--strict">
-        <div class="agenda">
-          <div class="slot"><span class="slot__time">08:00</span><span><span class="slot__name">Breakfast</span><span class="slot__note">Hotel, light. Coffee to go.</span></span></div>
-          <div class="slot"><span class="slot__time">08:45</span><span><span class="slot__name">Fushimi Inari</span><span class="slot__note">Taxi over; climb to the quiet upper gates before the crowds arrive.</span></span></div>
-          <div class="slot"><span class="slot__time">10:45</span><span><span class="slot__name">Nishiki Market</span><span class="slot__note">Graze the stalls — soy-milk donut, tamago skewer.</span></span></div>
-          <div class="slot"><span class="slot__time">12:15</span><span><span class="slot__name">Lunch — booked</span><span class="slot__note">Obanzai counter. Reserved, within budget.</span></span></div>
-          <div class="slot"><span class="slot__time">13:45</span><span><span class="slot__name">Kennin-ji &amp; Gion</span><span class="slot__note">Zen garden, then the old lanes on the walk through.</span></span></div>
-          <div class="slot"><span class="slot__time">15:15</span><span><span class="slot__name">Coffee</span><span class="slot__note">% Arabica, riverside. Sit for twenty.</span></span></div>
-          <div class="slot"><span class="slot__time">16:00</span><span><span class="slot__name">Kiyomizu-dera</span><span class="slot__note">Up Sannenzaka in soft afternoon light.</span></span></div>
-          <div class="slot"><span class="slot__time">17:45</span><span><span class="slot__name">Back to hotel</span><span class="slot__note">Rest, reset before dinner.</span></span></div>
-          <div class="slot"><span class="slot__time">19:30</span><span><span class="slot__name">Dinner — booked</span><span class="slot__note">Pontocho izakaya. Table held under your name.</span></span></div>
+        <div class="viewer">
+          <div class="viewer__bar">
+            <span class="viewer__dots"><i></i><i></i><i></i></span>
+            <span class="viewer__file">day-01 · strict.pdf</span>
+            <a class="viewer__dl" href="pdf/sample-strict.pdf" target="_blank" rel="noopener">Open ↗</a>
+          </div>
+          <iframe class="viewer__frame" src="pdf/sample-strict.pdf#toolbar=0&amp;view=FitH" title="Sample itinerary — strict (PDF)" loading="lazy"></iframe>
         </div>
       </div>
 
       <!-- OPTIONS -->
       <div class="fmt fmt--options">
-        <div class="band">
-          <div class="band__label"><b>Morning</b><span>Pick one</span></div>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="am"><span class="opt__name">Fushimi Inari</span><span class="opt__note">Early climb, quiet gates.</span></label>
-            <label class="opt"><input type="radio" name="am"><span class="opt__name">Arashiyama</span><span class="opt__note">Bamboo grove, riverside.</span></label>
-            <label class="opt"><input type="radio" name="am"><span class="opt__name">Slow start</span><span class="opt__note">Market browse + long coffee.</span></label>
+        <div class="viewer">
+          <div class="viewer__bar">
+            <span class="viewer__dots"><i></i><i></i><i></i></span>
+            <span class="viewer__file">day-01 · options.pdf</span>
+            <a class="viewer__dl" href="pdf/sample-options.pdf" target="_blank" rel="noopener">Open ↗</a>
           </div>
-        </div>
-        <div class="band">
-          <div class="band__label"><b>Midday</b><span>Pick one</span></div>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="mid"><span class="opt__name">Obanzai counter</span><span class="opt__note">Booked, in budget.</span></label>
-            <label class="opt"><input type="radio" name="mid"><span class="opt__name">Ramen alley</span><span class="opt__note">Quick, cheap, excellent.</span></label>
-            <label class="opt"><input type="radio" name="mid"><span class="opt__name">Depachika</span><span class="opt__note">Food-hall picnic to go.</span></label>
-          </div>
-        </div>
-        <div class="band">
-          <div class="band__label"><b>Afternoon</b><span>Pick one</span></div>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="pm"><span class="opt__name">Kiyomizu-dera</span><span class="opt__note">Temple + Sannenzaka lanes.</span></label>
-            <label class="opt"><input type="radio" name="pm"><span class="opt__name">Kennin-ji</span><span class="opt__note">Zen garden, then Gion.</span></label>
-            <label class="opt"><input type="radio" name="pm"><span class="opt__name">Philosopher's Path</span><span class="opt__note">Quiet canal-side walk.</span></label>
-          </div>
-        </div>
-        <div class="band">
-          <div class="band__label"><b>Evening</b><span>Pick one</span></div>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="eve"><span class="opt__name">Kaiseki</span><span class="opt__note">Splurge night, booked.</span></label>
-            <label class="opt"><input type="radio" name="eve"><span class="opt__name">Pontocho izakaya</span><span class="opt__note">Lively, lantern-lit.</span></label>
-            <label class="opt"><input type="radio" name="eve"><span class="opt__name">Early night</span><span class="opt__note">Light bite near the hotel.</span></label>
-          </div>
+          <iframe class="viewer__frame" src="pdf/sample-options.pdf#toolbar=0&amp;view=FitH" title="Sample itinerary — options (PDF)" loading="lazy"></iframe>
         </div>
       </div>
+
+      <p class="viewer__note">Preview renders in your browser's PDF viewer. Can't see it? Download <a href="pdf/sample-strict.pdf" download>strict</a> or <a href="pdf/sample-options.pdf" download>options</a>.</p>
     </section>
 
     <div class="home__cta" style="padding-bottom:8vh">

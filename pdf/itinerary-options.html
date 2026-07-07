@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sample itinerary — options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { width: 794px; font-family: "Inter", sans-serif; color: #16222c; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .head { background: #122a3a; color: #ece7dc; padding: 44px 52px 34px; }
+    .brand { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; }
+    .brand b { color: #e9a23b; }
+    .title { font-family: "Saira Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 66px; line-height: .88; letter-spacing: -.01em; margin: 20px 0 0; }
+    .sub { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8ca3b2; margin-top: 12px; }
+    .sub b { color: #ece7dc; font-weight: 500; }
+    .tag { display: inline-block; background: #e9a23b; color: #122a3a; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; margin-top: 18px; }
+    .body { padding: 22px 52px 30px; }
+    .band { padding: 15px 0; border-bottom: 1px solid #e4e1d8; }
+    .band:last-child { border-bottom: none; }
+    .bl { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; letter-spacing: .02em; margin-bottom: 8px; }
+    .bl span { font-family: "JetBrains Mono", monospace; font-size: 11px; color: #cf8a24; letter-spacing: .1em; margin-left: 10px; }
+    .opt { display: flex; gap: 12px; padding: 6px 0; align-items: baseline; }
+    .dot { color: #122a3a; font-size: 15px; line-height: 1; flex: none; }
+    .on { font-weight: 600; }
+    .oe { color: #55636e; }
+    .foot { padding: 18px 52px 40px; border-top: 2px solid #122a3a; margin-top: 6px; display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8896a0; }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <div class="brand">Serena Chua<b>·</b>Travel</div>
+    <h1 class="title">Day 01</h1>
+    <div class="sub">Your destination · Wakes <b>07:30</b> · Budget <b>mid</b></div>
+    <span class="tag">Options — your pick</span>
+  </div>
+
+  <div class="body">
+    <div class="band">
+      <div class="bl">Morning <span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Old town on foot</span> — <span class="oe">historic quarter, quiet early.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Green space &amp; gardens</span> — <span class="oe">a slower, greener start.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Market + long coffee</span> — <span class="oe">ease into the day.</span></span></div>
+    </div>
+    <div class="band">
+      <div class="bl">Midday <span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Local counter</span> — <span class="oe">booked, within budget.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Street-food row</span> — <span class="oe">quick, cheap, excellent.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Deli picnic</span> — <span class="oe">grab &amp; go to a park.</span></span></div>
+    </div>
+    <div class="band">
+      <div class="bl">Afternoon <span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Signature museum</span> — <span class="oe">the one worth your time.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Design district</span> — <span class="oe">artisans, shops, side streets.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Waterfront walk</span> — <span class="oe">easy miles, big views.</span></span></div>
+    </div>
+    <div class="band">
+      <div class="bl">Evening <span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Tasting menu</span> — <span class="oe">splurge night, booked.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Bistro quarter</span> — <span class="oe">lively, lantern-lit.</span></span></div>
+      <div class="opt"><span class="dot">○</span><span><span class="on">Early night</span> — <span class="oe">light bite near your base.</span></span></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Planned for you · hello@serenachua.travel</span>
+    <span>Sample · Page 1</span>
+  </div>
+</body>
+</html>

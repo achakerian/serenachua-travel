@@ -20,14 +20,38 @@ hosts on **GitHub Pages** as-is.
 |------|------|--------|-----|
 | `index.html` | Home | Hero + itinerary teaser card | "Your days, dialled in" — pitch + a sample day |
 | `how-it-works.html` | How it works | Numbered flow + tuning "dials" | Brief → plan → itinerary, and what it's tuned to |
-| `sample.html` | Sample | **Strict ⇆ Options toggle** | Show the two formats on one real day |
+| `sample.html` | Sample | **Strict ⇆ Options toggle** over a PDF viewer | Show the two formats as the real PDF you'd receive |
 | `about.html` | About | Passport spread | Who plans your days |
 | `contact.html` | Start | Trip-brief slip | Capture the brief (city, hotel, dates, wake time, interests, budget, format) |
 
-The Strict/Options toggle and the "pick one" option cards are **pure CSS**
-(hidden radio inputs + `:checked` / `:has()`), so they work with no JavaScript.
+The Strict/Options toggle is **pure CSS** (hidden radio inputs + `:checked`), so
+it works with no JavaScript — it swaps which PDF the embedded viewer shows.
 Type loads from Google Fonts. The nav is a slim shared bar and the footer is a
 single line — no repeated content blocks across pages.
+
+### The sample PDFs (`pdf/`)
+
+The Sample page embeds two real, city-agnostic itinerary PDFs in an iframe styled
+as a document viewer. They're generated from self-contained HTML sources:
+
+| Source (edit these) | Output (embedded) |
+|---|---|
+| `pdf/itinerary-strict.html` | `pdf/sample-strict.pdf` |
+| `pdf/itinerary-options.html` | `pdf/sample-options.pdf` |
+
+To regenerate after editing a source (needs Chrome installed):
+
+```bash
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+"$CHROME" --headless --no-pdf-header-footer --virtual-time-budget=6000 \
+  --print-to-pdf=pdf/sample-strict.pdf  pdf/itinerary-strict.html
+"$CHROME" --headless --no-pdf-header-footer --virtual-time-budget=6000 \
+  --print-to-pdf=pdf/sample-options.pdf pdf/itinerary-options.html
+```
+
+The embed uses the browser's native PDF viewer via `#toolbar=0&view=FitH`. Most
+desktop browsers render it inline; the page also offers download links as a
+fallback for browsers that won't (some mobile ones).
 
 ## Preview locally
 
@@ -56,7 +80,7 @@ Forms, Getform, Web3Forms.
 - [ ] **Portrait** — real photo in `about.html` (the striped block)
 - [ ] **`[TBC]` facts** — city, contact email
 - [ ] **Form endpoint** — Formspree ID (see above)
-- [ ] **Sample day** — keep Kyoto as a demo or swap for a signature city
+- [ ] **Sample PDFs** — city-agnostic demo; edit `pdf/itinerary-*.html` and regenerate
 - [ ] **Turnaround / tweak claims** — confirm the numbers on `about.html`
 - [ ] **Copy pass** — tune the voice to Serena's own
 - [ ] **Legal** — privacy note on the form, basic terms
