@@ -12,7 +12,31 @@ type (Saira Condensed), Inter body, JetBrains Mono flight-codes, and a recurring
 hosts on **GitHub Pages** as-is.
 
 > Still a design pass: a few facts are `[TBC]` and the enquiry form needs a
-> Formspree endpoint. Sample content (Kyoto) is illustrative.
+> Formspree endpoint. Sample content is illustrative.
+
+## Themes
+
+The site ships with **five interchangeable themes**, each a palette + display
+typeface. Pick one from the grid on the home page — it live-switches the whole
+page and follows you across the site (saved to `localStorage`).
+
+| Theme | Mood | Display face |
+|-------|------|--------------|
+| `departures` | Navy / bone / amber signage (default) | Saira Condensed |
+| `atlas` | Forest green + burnt orange, cartographic | Space Grotesk |
+| `riviera` | Sea blue + coral, rounded, coastal | Bricolage Grotesque |
+| `nocturne` | Plum-black + gold, luxe night | Cormorant Garamond |
+| `sunbaked` | Terracotta + teal, Mediterranean | Fraunces |
+
+**How it works:** every colour is a CSS variable; each theme is one
+`[data-theme="…"]` block in `styles.css` that redefines the palette, display
+font and corner radius. A tiny inline script in each page's `<head>` applies the
+saved/`?theme=` theme before first paint (no flash). To add a theme, copy a
+`[data-theme]` block, add a `.tcard` button on the home page, and add its name to
+the `ok` array in the head script.
+
+Deep-link a specific theme with `?theme=riviera` on any page. Note: the sample
+**PDFs** are fixed artifacts and always render in the Departures palette.
 
 ## Pages — one job each, one layout each
 
