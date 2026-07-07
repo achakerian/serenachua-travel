@@ -3,154 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packages — Serena Chua Travel (WIREFRAME)</title>
+  <title>Serena Chua Travel — Trips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="wf-banner">◺ Wireframe / mid-fi mockup — placeholder prices &amp; images. "Book &amp; pay" buttons need real Stripe/PayPal links (see README).</div>
+<body class="page-packages dark">
 
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <span class="brand__mark">LOGO</span>
-        <span class="brand__name">Serena Chua Travel<small>Independent Agent</small></span>
-      </a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('is-open')">Menu ▾</button>
-      <ul class="nav__links" id="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a class="is-active" href="packages.html">Packages</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn btn--primary" href="contact.html" style="color:#fff">Plan my trip</a></li>
-      </ul>
+  <nav class="nav">
+    <a class="nav__brand" href="index.html">SERENA CHUA<b>·</b>TRAVEL</a>
+    <button class="nav__toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">Menu</button>
+    <div class="nav__links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html" aria-current="page">Trips</a>
+      <a href="contact.html">Enquire</a>
     </div>
-  </header>
+    <span class="nav__code">SCT·004</span>
+  </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="section__eyebrow">Packages</p>
-      <h1>Ready-to-book trips</h1>
-      <p>Fixed-price starting points you can secure with a deposit online. Want something different? <a href="contact.html">Enquire for a bespoke quote</a> — most of my trips are tailor-made.</p>
-    </div>
-  </section>
+  <main class="wrap">
+    <header class="pk-head">
+      <span class="code">Ready to book</span>
+      <h1>Grab a seat.</h1>
+      <p>Fixed-price trips you can secure with a deposit online. Want something different? <a href="contact.html">Ask for a bespoke quote</a>.</p>
+    </header>
 
-  <section class="section">
-    <div class="container">
+    <!-- To take payment on a static site: create a Stripe Payment Link (or PayPal
+         button), then replace href="#REPLACE_WITH_PAYMENT_LINK" below with it. -->
+    <section class="tickets">
 
-      <!-- =========================================================
-           HOW TO WIRE PAYMENTS (GitHub Pages = static, no backend):
-           1. In Stripe, create a Payment Link (or PayPal button).
-           2. Copy the URL.
-           3. Replace href="#REPLACE_WITH_PAYMENT_LINK" on each card.
-           The button opens Stripe/PayPal's hosted checkout — no server needed.
-           Remove the .btn--pay class (it shows the "link TBD" badge) once wired.
-           ========================================================= -->
-
-      <div class="grid grid--3">
-
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">Beach · 7 nights · Flights inc.</div>
-            <h3>Bali Escape <span class="mark">name TBC</span></h3>
-            <p>Placeholder — villa stay, temple tours and beach time. Replace with the real inclusions list.</p>
-            <div class="pkg__price">from £X,XXX <small>pp · deposit £XXX</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask a question</a>
-            </div>
+      <article class="ticket">
+        <div class="ticket__main">
+          <div class="ticket__route">LHR &nbsp;→&nbsp; DPS</div>
+          <h2 class="ticket__name">Bali</h2>
+          <p class="ticket__desc">Villa stays, temple mornings and slow beach afternoons.</p>
+          <div class="ticket__specs">
+            <span><b>7</b> Nights</span>
+            <span><b>Beach</b> Style</span>
+            <span><b>Inc.</b> Flights</span>
           </div>
-        </article>
-
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">Honeymoon · 10 nights</div>
-            <h3>Maldives Two-Centre <span class="mark">name TBC</span></h3>
-            <p>Placeholder — overwater villa plus a city stopover on the way home.</p>
-            <div class="pkg__price">from £X,XXX <small>pp · deposit £XXX</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask a question</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">City · 4 nights</div>
-            <h3>Tokyo City Break <span class="mark">name TBC</span></h3>
-            <p>Placeholder — a long weekend of food, culture and neon.</p>
-            <div class="pkg__price">from £X,XXX <small>pp · deposit £XXX</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask a question</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">Cruise · 7 nights</div>
-            <h3>Mediterranean Cruise <span class="mark">name TBC</span></h3>
-            <p>Placeholder — round-trip cruise with drinks package and excursions.</p>
-            <div class="pkg__price">from £X,XXX <small>pp · deposit £XXX</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask a question</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">Adventure · 12 nights</div>
-            <h3>Costa Rica Explorer <span class="mark">name TBC</span></h3>
-            <p>Placeholder — rainforest, volcanoes and Pacific coast, small-group style.</p>
-            <div class="pkg__price">from £X,XXX <small>pp · deposit £XXX</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask a question</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Bespoke prompt card -->
-        <article class="card pkg" style="justify-content:center;text-align:center;border-style:dashed">
-          <div class="pkg__body" style="justify-content:center">
-            <div class="card__icon" style="margin:0 auto 14px">＋</div>
-            <h3>Something else in mind?</h3>
-            <p>These are just starting points. Tell me your dream trip and I'll build it from scratch.</p>
-            <div class="pkg__foot"><a class="btn btn--primary btn--block" href="contact.html">Enquire for a bespoke quote</a></div>
-          </div>
-        </article>
-
-      </div>
-
-      <p class="form__note" style="text-align:center;margin-top:28px">Prices are per person and indicative placeholders. Deposits secure your booking; the balance is due before travel. <span class="mark">Confirm real terms.</span></p>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html"><span class="brand__mark">LOGO</span><span class="brand__name">Serena Chua Travel</span></a>
-          <p style="margin-top:12px">Independent travel agent arranging personally planned trips worldwide.</p>
         </div>
-        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="packages.html">Packages</a></li></ul></div>
-        <div><h4>Get in touch</h4><ul><li><a href="contact.html">Enquiry form</a></li><li><a href="mailto:hello@example.com"><span class="mark">email TBC</span></a></li><li><a href="tel:+000000000"><span class="mark">phone TBC</span></a></li></ul></div>
-        <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">TikTok</a></li></ul></div>
+        <div class="ticket__stub">
+          <span class="code">DEP · TBC</span>
+          <div class="ticket__price">£X,XXX<small>per person</small></div>
+          <a class="btn btn--amber" href="#REPLACE_WITH_PAYMENT_LINK">Book <span class="btn__arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="ticket">
+        <div class="ticket__main">
+          <div class="ticket__route">LHR &nbsp;→&nbsp; MLE</div>
+          <h2 class="ticket__name">Maldives</h2>
+          <p class="ticket__desc">Overwater villa, plus a city stopover on the way home.</p>
+          <div class="ticket__specs">
+            <span><b>10</b> Nights</span>
+            <span><b>Honeymoon</b> Style</span>
+            <span><b>Inc.</b> Flights</span>
+          </div>
+        </div>
+        <div class="ticket__stub">
+          <span class="code">DEP · TBC</span>
+          <div class="ticket__price">£X,XXX<small>per person</small></div>
+          <a class="btn btn--amber" href="#REPLACE_WITH_PAYMENT_LINK">Book <span class="btn__arrow">→</span></a>
+        </div>
+      </article>
+
+      <article class="ticket">
+        <div class="ticket__main">
+          <div class="ticket__route">LHR &nbsp;→&nbsp; HND</div>
+          <h2 class="ticket__name">Tokyo</h2>
+          <p class="ticket__desc">A long weekend of food, culture and neon.</p>
+          <div class="ticket__specs">
+            <span><b>4</b> Nights</span>
+            <span><b>City</b> Style</span>
+            <span><b>Inc.</b> Flights</span>
+          </div>
+        </div>
+        <div class="ticket__stub">
+          <span class="code">DEP · TBC</span>
+          <div class="ticket__price">£X,XXX<small>per person</small></div>
+          <a class="btn btn--amber" href="#REPLACE_WITH_PAYMENT_LINK">Book <span class="btn__arrow">→</span></a>
+        </div>
+      </article>
+
+      <div class="pk-bespoke">
+        <p><b>Somewhere else?</b><br>These are starting points. Tell me the trip and I'll build it.</p>
+        <a class="btn btn--ghost-light" href="contact.html">Bespoke quote <span class="btn__arrow">→</span></a>
       </div>
-      <div class="footer__bottom">
-        <span>© <span class="mark">2026</span> Serena Chua Travel. All rights reserved.</span>
-        <span>ATOL / ABTA <span class="mark">membership no. TBC</span></span>
-      </div>
-    </div>
+
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span><span class="foot__mark">✦</span> Serena Chua Travel</span>
+    <span>Prices &amp; deposits <span class="tbc">[TBC]</span></span>
   </footer>
+
 </body>
 </html>

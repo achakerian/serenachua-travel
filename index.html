@@ -3,220 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serena Chua Travel — Independent Travel Agent (WIREFRAME)</title>
-  <meta name="description" content="Personally planned holidays, honeymoons, cruises and group trips by independent travel agent Serena Chua." />
+  <title>Serena Chua Travel — Where to?</title>
+  <meta name="description" content="Independent travel agent. Personally planned trips, booked by a human." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- WIREFRAME BANNER — delete this line before going live -->
-  <div class="wf-banner">◺ Wireframe / mid-fi mockup — placeholder copy &amp; images. See README for the checklist of things to replace.</div>
+<body class="page-home dark">
 
-  <!-- ============ HEADER (shared across all pages) ============ -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <span class="brand__mark">LOGO</span>
-        <span class="brand__name">Serena Chua Travel<small>Independent Agent</small></span>
+  <nav class="nav">
+    <a class="nav__brand" href="index.html">SERENA CHUA<b>·</b>TRAVEL</a>
+    <button class="nav__toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">Menu</button>
+    <div class="nav__links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html">Trips</a>
+      <a href="contact.html">Enquire</a>
+    </div>
+    <span class="nav__code">SCT·001</span>
+  </nav>
+
+  <main class="wrap">
+    <section class="home-hero">
+      <div class="home-hero__kicker reveal">
+        <span class="code">Independent travel agent</span>
+        <span class="line"></span>
+        <span class="code code--muted">Est. 2026 · <span class="tbc">[City]</span></span>
+      </div>
+      <h1 class="home-hero__title reveal">Where<br>to<span>?</span></h1>
+      <p class="home-hero__sub reveal">Tell me the trip you're dreaming about. I plan it, book it, and stay on the line for the whole thing — the way travel used to work.</p>
+    </section>
+
+    <!-- Departures board: the signature -->
+    <section class="board" aria-label="Now booking">
+      <div class="board__head">
+        <span>Destination</span><span>Nights</span><span>From</span><span>Style</span><span>Status</span>
+      </div>
+      <a class="board__row reveal" href="packages.html">
+        <span class="board__dest">Bali</span>
+        <span class="board__meta">7</span>
+        <span class="board__price">£X,XXX</span>
+        <span class="board__meta">Beach · villas</span>
+        <span class="board__status">Booking</span>
       </a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('is-open')">Menu ▾</button>
-      <ul class="nav__links" id="nav">
-        <li><a class="is-active" href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="packages.html">Packages</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn btn--primary" href="contact.html" style="color:#fff">Plan my trip</a></li>
-      </ul>
-    </div>
-  </header>
+      <a class="board__row reveal" href="packages.html">
+        <span class="board__dest">Maldives</span>
+        <span class="board__meta">10</span>
+        <span class="board__price">£X,XXX</span>
+        <span class="board__meta">Honeymoon</span>
+        <span class="board__status">Booking</span>
+      </a>
+      <a class="board__row reveal" href="packages.html">
+        <span class="board__dest">Tokyo</span>
+        <span class="board__meta">4</span>
+        <span class="board__price">£X,XXX</span>
+        <span class="board__meta">City break</span>
+        <span class="board__status">Booking</span>
+      </a>
+    </section>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div>
-        <p class="section__eyebrow">Independent travel agent · <span class="mark">based in [City]</span></p>
-        <h1>Travel that's planned around you — not a booking website.</h1>
-        <p>Holidays, honeymoons, cruises and group trips, arranged personally by Serena. You tell me the dream; I handle the flights, hotels, transfers and the small print.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="contact.html">Start planning — it's free</a>
-          <a class="btn btn--ghost" href="packages.html">Browse packages</a>
-        </div>
-        <div class="hero__trust">
-          <div><strong>ATOL</strong><span class="mark">protection TBC</span></div>
-          <div><strong>1:1</strong>Personal service</div>
-          <div><strong>0 fees</strong>No booking fee to enquire</div>
-        </div>
-      </div>
-      <div class="ph ph--tall"><span>Hero image — 640×480</span></div>
-    </div>
-  </section>
+    <section class="home-cta">
+      <a class="btn btn--amber" href="contact.html">Plan my trip <span class="btn__arrow">→</span></a>
+      <p>No booking fee to enquire.</p>
+    </section>
+  </main>
 
-  <!-- ============ VALUE / WHY ============ -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="section__head">
-        <p class="section__eyebrow">Why book with an independent agent</p>
-        <h2>A real person who's on your side</h2>
-      </div>
-      <div class="grid grid--3">
-        <div class="card">
-          <div class="card__icon">ICON</div>
-          <h3>Tailored, not templated</h3>
-          <p>Every itinerary is built from scratch around your dates, budget and pace — no cookie-cutter packages.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">ICON</div>
-          <h3>One point of contact</h3>
-          <p>You deal with me start to finish. Questions before you go and support while you're away.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">ICON</div>
-          <h3>Protected &amp; insured</h3>
-          <p><span class="mark">ATOL / ABTA / insurance details TBC</span> — your money and your trip are covered.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FEATURED PACKAGES ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section__head">
-        <p class="section__eyebrow">Featured</p>
-        <h2>A few trips to spark ideas</h2>
-        <p>Fixed-price starting points you can book now — or use as inspiration for something bespoke.</p>
-      </div>
-      <div class="grid grid--3">
-        <!-- Package card ×3 -->
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">Beach · 7 nights</div>
-            <h3>Bali Escape <span class="mark">name TBC</span></h3>
-            <p>Placeholder blurb — a week of villas, temples and sunsets, flights included.</p>
-            <div class="pkg__price">from £X,XXX <small>pp</small></div>
-            <div class="pkg__foot">
-              <!-- TODO: paste Stripe Payment Link or PayPal link into href -->
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask about this trip</a>
-            </div>
-          </div>
-        </article>
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">Honeymoon · 10 nights</div>
-            <h3>Maldives Two-Centre <span class="mark">name TBC</span></h3>
-            <p>Placeholder blurb — overwater villa plus a city stopover on the way home.</p>
-            <div class="pkg__price">from £X,XXX <small>pp</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask about this trip</a>
-            </div>
-          </div>
-        </article>
-        <article class="card pkg">
-          <div class="ph"><span>Image — 400×260</span></div>
-          <div class="pkg__body">
-            <div class="pkg__meta">City · 4 nights</div>
-            <h3>Tokyo City Break <span class="mark">name TBC</span></h3>
-            <p>Placeholder blurb — a long weekend of food, culture and neon.</p>
-            <div class="pkg__price">from £X,XXX <small>pp</small></div>
-            <div class="pkg__foot">
-              <a class="btn btn--primary btn--block btn--pay" href="#REPLACE_WITH_PAYMENT_LINK">Book &amp; pay deposit</a>
-              <a class="btn btn--ghost btn--block" href="contact.html">Ask about this trip</a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <p style="text-align:center;margin-top:28px"><a class="btn btn--ghost" href="packages.html">See all packages →</a></p>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT TEASER ============ -->
-  <section class="section section--soft">
-    <div class="container hero__grid">
-      <div class="ph ph--wide"><span>Portrait — 480×360</span></div>
-      <div>
-        <p class="section__eyebrow">Meet your agent</p>
-        <h2>Hi, I'm Serena 👋</h2>
-        <p>Placeholder intro — a sentence or two on Serena's background, the kind of travel she loves, and why she went independent. Keep it warm and personal.</p>
-        <a class="btn btn--ghost" href="about.html">More about me →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="section__head">
-        <p class="section__eyebrow">Kind words</p>
-        <h2>What early clients say</h2>
-        <p><span class="mark">Replace with real testimonials once you have them.</span></p>
-      </div>
-      <div class="grid grid--2">
-        <blockquote class="quote">
-          <p>“Placeholder testimonial — Serena took all the stress out of planning and found us things we'd never have booked ourselves.”</p>
-          <div class="quote__who"><span class="ph ph--round"></span><div><strong>Client name</strong><br><small>Trip taken · 2026</small></div></div>
-        </blockquote>
-        <blockquote class="quote">
-          <p>“Placeholder testimonial — quick to reply, great value, and there when a flight changed. Booking again.”</p>
-          <div class="quote__who"><span class="ph ph--round"></span><div><strong>Client name</strong><br><small>Trip taken · 2026</small></div></div>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA BAND ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-band">
-        <h2>Ready to start planning?</h2>
-        <p>Tell me where you'd like to go. No obligation, no booking fee to enquire.</p>
-        <a class="btn btn--ghost" href="contact.html">Send an enquiry</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER (shared across all pages) ============ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html"><span class="brand__mark">LOGO</span><span class="brand__name">Serena Chua Travel</span></a>
-          <p style="margin-top:12px">Independent travel agent arranging personally planned trips worldwide. <span class="mark">Tagline TBC</span></p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="packages.html">Packages</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Get in touch</h4>
-          <ul>
-            <li><a href="contact.html">Enquiry form</a></li>
-            <li><a href="mailto:hello@example.com"><span class="mark">email TBC</span></a></li>
-            <li><a href="tel:+000000000"><span class="mark">phone TBC</span></a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Follow</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">TikTok</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© <span class="mark">2026</span> Serena Chua Travel. All rights reserved.</span>
-        <span>ATOL / ABTA <span class="mark">membership no. TBC</span></span>
-      </div>
-    </div>
+  <footer class="foot">
+    <span><span class="foot__mark">✦</span> Serena Chua Travel</span>
+    <a href="contact.html">Enquire →</a>
   </footer>
+
 </body>
 </html>

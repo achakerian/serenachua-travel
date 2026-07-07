@@ -1,27 +1,30 @@
-# Serena Chua Travel — website wireframe
+# Serena Chua Travel — website
 
-A **mid-fidelity wireframe** for an independent (contractor) leisure travel agent
-just starting out. Plain static HTML + one CSS file — no build step, no framework
-— so it hosts on **GitHub Pages** as-is.
+A five-page site for an independent (contractor) leisure travel agent, in the
+**"Departures"** design direction: navy / bone / amber, signage-style display
+type, and a travel-document motif. Each page has its own layout so no two read
+the same. Plain static HTML + one CSS file — no build step — hosts on **GitHub
+Pages** as-is.
 
-> ⚠️ This is a wireframe: placeholder copy, gray image blocks, and `[TBC]`
-> markers throughout. Nothing here is final content. Work through the checklist
-> below to turn it into a live site.
+> Still a design pass, not final content: a few facts are marked `[TBC]` and the
+> payment / form links are placeholders. Work through the checklist below to go live.
 
-## Pages
+## Pages — one job each, one layout each
 
-| File | Page | Purpose |
-|------|------|---------|
-| `index.html` | Home | Hero, why-book-independent, featured packages, about teaser, testimonials |
-| `about.html` | About | Serena's story, credentials, quick facts |
-| `services.html` | Services | Service categories, "how it works", pricing model |
-| `packages.html` | Packages | Ready-to-book trips with **Book & pay** buttons + a bespoke-enquiry card |
-| `contact.html` | Contact | Enquiry form (Formspree-ready) + contact details |
-| `styles.css` | — | Shared stylesheet. Design tokens (colours, spacing) live in `:root` at the top |
+| File | Page | Layout metaphor | Job |
+|------|------|-----------------|-----|
+| `index.html` | Home | Departures board | "Where to?" — wordmark, 3 destinations, one CTA |
+| `about.html` | About | Passport spread | Who Serena is — portrait, short intro, fact "stamps" |
+| `services.html` | Services | Atlas index | What she arranges — a typographic list |
+| `packages.html` | Trips | Boarding-pass tickets | Book now — wide ticket rows with price + book |
+| `contact.html` | Enquire | Booking slip | Start a trip — one focused form |
+| `styles.css` | — | — | One system: tokens in `:root`, page-scoped `body.page-*` blocks |
+
+Type is loaded from Google Fonts (Saira Condensed · Inter · JetBrains Mono).
+The nav is a slim shared bar; the footer is a single line — deliberately no
+repeated content blocks across pages.
 
 ## Preview locally
-
-Just open `index.html` in a browser — or serve the folder:
 
 ```bash
 python3 -m http.server 8000   # then visit http://localhost:8000
@@ -29,61 +32,45 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 
 ## Deploy to GitHub Pages
 
-1. Create a repo (e.g. `serenachua-travel`) and push these files to it.
-2. Repo **Settings → Pages → Build and deployment**.
-3. Source: **Deploy from a branch**, branch **main**, folder **/(root)**.
-4. Save. Your site appears at `https://<username>.github.io/serenachua-travel/`.
-5. (Optional) add a custom domain under the same Pages settings.
+Already deployed at **https://achakerian.github.io/serenachua-travel/**. Any push
+to `main` redeploys. (Settings → Pages → Deploy from branch `main` / root.)
+Relative links mean it works under the project sub-path unchanged.
 
-Because every page links with relative paths (`about.html`, `styles.css`), it
-works under a project sub-path without changes.
+## Payments (GitHub Pages has no backend)
 
-## Payments (important: GitHub Pages has no backend)
+Static hosting can't process payments. The **Book** buttons on `packages.html`
+use hosted checkout links instead:
 
-GitHub Pages serves static files only — it **cannot process payments itself**.
-The "Book & pay deposit" buttons on `packages.html` are placeholders. To take
-money without a server, use a **hosted checkout link**:
+1. In **Stripe** create a *Payment Link* (or a **PayPal** button / PayPal.me).
+2. Replace each `href="#REPLACE_WITH_PAYMENT_LINK"` in `packages.html` with it.
+   (The amber "LINK TBD" tag disappears automatically once the href changes.)
 
-1. In **Stripe** create a *Payment Link* (Dashboard → Payment Links), or make a
-   **PayPal** button / PayPal.me link.
-2. Copy the URL.
-3. In `packages.html`, replace every `href="#REPLACE_WITH_PAYMENT_LINK"` with it.
-4. Remove the `btn--pay` class from that link (it's what shows the yellow
-   "link TBD" badge).
-
-Clicking the button then sends the client to Stripe/PayPal's own secure checkout
-page — no backend needed. For fully custom trips, clients use the enquiry form
-and you send a deposit link or invoice manually.
+Clicking then sends the client to Stripe/PayPal's own secure checkout. For custom
+trips, clients use the enquiry form and you send a deposit link manually.
 
 ## Enquiry form (needs a form service)
 
-Static sites can't email form submissions on their own. The form in
-`contact.html` is pre-wired for **Formspree**:
+The form in `contact.html` is pre-wired for **Formspree**:
 
-1. Sign up at <https://formspree.io> (free tier) and create a form.
+1. Create a free form at <https://formspree.io>.
 2. Replace `YOUR_FORM_ID` in the `<form action="…">` with your endpoint.
-3. Optional: uncomment the `_next` hidden field to redirect to a thank-you page.
 
 Alternatives that work the same way: Netlify Forms, Getform, Web3Forms.
 
-## Placeholder checklist (things to replace before launch)
+## Checklist before launch
 
-- [ ] **Logo** — the `LOGO` box in the header/footer
-- [ ] **Brand colours & fonts** — edit the `:root` tokens in `styles.css`
-- [ ] **Hero + section images** — every `IMAGE / dimension` gray block
-- [ ] **Serena's bio & portrait** — `about.html`
-- [ ] **Real copy** — anything marked with the dashed `[TBC]` style or "Placeholder"
-- [ ] **Credentials** — ATOL / ABTA / IATA / host agency badges & membership numbers
-- [ ] **Contact details** — email, phone/WhatsApp, hours, location, socials
-- [ ] **Packages** — real names, prices, deposits, inclusions, images
-- [ ] **Payment links** — Stripe/PayPal on each package (see above)
+- [ ] **Colours / fonts** — tune the `:root` tokens in `styles.css` if desired
+- [ ] **Portrait** — real photo in `about.html` (the striped block)
+- [ ] **`[TBC]` facts** — city, ATOL status, email, prices/deposits
+- [ ] **Trips** — real destinations, prices, nights, inclusions in `packages.html`
+- [ ] **Payment links** — Stripe/PayPal on each ticket (see above)
 - [ ] **Form endpoint** — Formspree ID (see above)
-- [ ] **Legal** — privacy policy link, booking terms, company/registration details
-- [ ] **Remove the yellow wireframe banner** — delete the `.wf-banner` div from each page
+- [ ] **Legal** — privacy policy link, booking terms, company details
 
 ## Notes
 
-- Mobile responsive; the nav collapses to a "Menu" toggle under ~860px.
-- Header and footer are duplicated across pages (no templating in plain HTML).
-  If you change one, update all five — or later move to a static-site generator
-  (Eleventy, Astro, Jekyll) that supports shared partials.
+- Responsive to mobile; nav collapses to a "Menu" toggle under 780px.
+- Reduced-motion and keyboard focus are respected.
+- No templating in plain HTML, so the shared nav/footer markup lives in each
+  file — edit one, edit all five. Move to a static-site generator (Eleventy,
+  Astro, Jekyll) later if that becomes annoying.

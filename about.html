@@ -3,109 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Serena — Serena Chua Travel (WIREFRAME)</title>
+  <title>Serena Chua Travel — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="wf-banner">◺ Wireframe / mid-fi mockup — placeholder copy &amp; images.</div>
+<body class="page-about light">
 
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <span class="brand__mark">LOGO</span>
-        <span class="brand__name">Serena Chua Travel<small>Independent Agent</small></span>
-      </a>
-      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('is-open')">Menu ▾</button>
-      <ul class="nav__links" id="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="is-active" href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="packages.html">Packages</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="btn btn--primary" href="contact.html" style="color:#fff">Plan my trip</a></li>
-      </ul>
+  <nav class="nav">
+    <a class="nav__brand" href="index.html">SERENA CHUA<b>·</b>TRAVEL</a>
+    <button class="nav__toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">Menu</button>
+    <div class="nav__links">
+      <a href="about.html" aria-current="page">About</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html">Trips</a>
+      <a href="contact.html">Enquire</a>
     </div>
-  </header>
+    <span class="nav__code">SCT·002</span>
+  </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="section__eyebrow">About</p>
-      <h1>The person behind the plans</h1>
-      <p>Placeholder intro — one or two sentences positioning Serena and what makes booking with her different from a big online agent.</p>
-    </div>
-  </section>
+  <main class="wrap">
+    <section class="passport">
+      <figure class="passport__photo">
+        <span class="ph-label">Portrait</span>
+        <span class="code">SCT · AGENT · 002</span>
+      </figure>
+      <div class="passport__head">
+        <span class="code">Who's planning your trip</span>
+        <h1 class="passport__title">I'm Serena.</h1>
+        <p class="passport__intro">I left the big agencies to plan trips one at a time, for people I actually talk to. You get my direct line, my honest opinion, and a trip built around you — not a call centre.</p>
+        <p class="passport__field">Based · <b><span class="tbc">[City], UK</span></b> &nbsp;/&nbsp; Plans trips · <b>Worldwide</b></p>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="container hero__grid">
-      <div class="ph ph--tall"><span>Portrait — 520×560</span></div>
-      <div>
-        <h2>Hi, I'm Serena</h2>
-        <p>Placeholder story paragraph — how Serena got into travel, favourite destinations, and the moment she decided to go independent. This is where a new agent builds trust, so keep it personal and specific.</p>
-        <p>Placeholder paragraph two — her approach: how she works with clients, response times, the kinds of trips she loves arranging.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="contact.html">Work with me</a>
-          <a class="btn btn--ghost" href="services.html">What I offer</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="stamps" aria-label="Details">
+      <span class="stamp"><b>24h</b> Reply time</span>
+      <span class="stamp"><b>£0</b> To enquire</span>
+      <span class="stamp"><b>ATOL</b> Protected <span class="tbc">[TBC]</span></span>
+      <span class="stamp"><b>1:1</b> Every trip, just me</span>
+    </section>
+  </main>
 
-  <section class="section section--soft">
-    <div class="container">
-      <div class="section__head">
-        <p class="section__eyebrow">Credentials</p>
-        <h2>Booked with confidence</h2>
-        <p><span class="mark">Swap these for the real memberships / protections once confirmed.</span></p>
-      </div>
-      <div class="grid grid--4">
-        <div class="card" style="text-align:center"><div class="ph" style="min-height:70px"><span>ATOL</span></div></div>
-        <div class="card" style="text-align:center"><div class="ph" style="min-height:70px"><span>ABTA</span></div></div>
-        <div class="card" style="text-align:center"><div class="ph" style="min-height:70px"><span>IATA</span></div></div>
-        <div class="card" style="text-align:center"><div class="ph" style="min-height:70px"><span>Host agency</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section__head">
-        <p class="section__eyebrow">A few facts</p>
-        <h2>Good to know</h2>
-      </div>
-      <div class="grid grid--3">
-        <div class="card"><h3><span class="mark">50+</span> destinations</h3><p>Placeholder stat — regions or countries Serena can arrange.</p></div>
-        <div class="card"><h3>Reply within <span class="mark">24h</span></h3><p>Placeholder promise — typical response time to enquiries.</p></div>
-        <div class="card"><h3>Speaks <span class="mark">EN / …</span></h3><p>Placeholder — languages or specialisms worth flagging.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="cta-band">
-        <h2>Let's plan something good</h2>
-        <p>No booking fee to enquire. Just tell me what you're dreaming about.</p>
-        <a class="btn btn--ghost" href="contact.html">Send an enquiry</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <a class="brand" href="index.html"><span class="brand__mark">LOGO</span><span class="brand__name">Serena Chua Travel</span></a>
-          <p style="margin-top:12px">Independent travel agent arranging personally planned trips worldwide.</p>
-        </div>
-        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="packages.html">Packages</a></li></ul></div>
-        <div><h4>Get in touch</h4><ul><li><a href="contact.html">Enquiry form</a></li><li><a href="mailto:hello@example.com"><span class="mark">email TBC</span></a></li><li><a href="tel:+000000000"><span class="mark">phone TBC</span></a></li></ul></div>
-        <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">TikTok</a></li></ul></div>
-      </div>
-      <div class="footer__bottom">
-        <span>© <span class="mark">2026</span> Serena Chua Travel. All rights reserved.</span>
-        <span>ATOL / ABTA <span class="mark">membership no. TBC</span></span>
-      </div>
-    </div>
+  <footer class="foot">
+    <span><span class="foot__mark">✦</span> Serena Chua Travel</span>
+    <a href="services.html">See what I arrange →</a>
   </footer>
+
 </body>
 </html>
