@@ -16,27 +16,33 @@ hosts on **GitHub Pages** as-is.
 
 ## Themes
 
-The site ships with **five interchangeable themes**, each a palette + display
-typeface. Pick one from the grid on the home page — it live-switches the whole
-page and follows you across the site (saved to `localStorage`).
+Five **Canva-inspired gradient themes** — bright colour, gradient-filled
+headlines, floating colour blobs on the hero, pill buttons and rounded surfaces.
+Pick one from the grid on the home page; it live-switches the whole page and
+follows you across the site (saved to `localStorage`).
 
-| Theme | Mood | Display face |
-|-------|------|--------------|
-| `departures` | Navy / bone / amber signage (default) | Saira Condensed |
-| `atlas` | Forest green + burnt orange, cartographic | Space Grotesk |
-| `riviera` | Sea blue + coral, rounded, coastal | Bricolage Grotesque |
-| `nocturne` | Plum-black + gold, luxe night | Cormorant Garamond |
-| `sunbaked` | Terracotta + teal, Mediterranean | Fraunces |
+| Theme | Gradient | Display face |
+|-------|----------|--------------|
+| `sorbet` | Coral → pink → gold | Fraunces |
+| `lagoon` | Teal → blue → violet (default) | Space Grotesk |
+| `ultra` | Violet → fuchsia → blue | Bricolage Grotesque |
+| `meadow` | Lime → emerald → aqua (dark text) | Fredoka |
+| `punch` | Magenta → red → amber | Unbounded |
 
 **How it works:** every colour is a CSS variable; each theme is one
-`[data-theme="…"]` block in `styles.css` that redefines the palette, display
-font and corner radius. A tiny inline script in each page's `<head>` applies the
-saved/`?theme=` theme before first paint (no flash). To add a theme, copy a
-`[data-theme]` block, add a `.tcard` button on the home page, and add its name to
-the `ok` array in the head script.
+`[data-theme="…"]` block in `styles.css` that defines a gradient (`--grad` + its
+stops `--c1/2/3`), an accent, text colours, corner radius and a display font. The
+home hero uses `--grad` as its background with floating blurred blobs; light
+pages use gradient-filled headlines (`background-clip: text`) and gradient pills.
+A tiny inline script in each page's `<head>` applies the saved/`?theme=` theme
+before first paint (no flash).
 
-Deep-link a specific theme with `?theme=riviera` on any page. Note: the sample
-**PDFs** are fixed artifacts and always render in the Departures palette.
+To add a theme: copy a `[data-theme]` block, add a `.tcard` button on the home
+page, and add its key to the `ok` array in the head script.
+
+Deep-link a specific theme with `?theme=punch` on any page. Note: the sample
+**PDFs** are fixed artifacts and stay in a navy document palette regardless of
+theme.
 
 ## Pages — one job each, one layout each
 

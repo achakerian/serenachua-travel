@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>(function(){try{var ok=['departures','atlas','riviera','nocturne','sunbaked'];var p=new URLSearchParams(location.search).get('theme');var t=(p&&ok.indexOf(p)>=0)?p:(localStorage.getItem('sct-theme')||'departures');if(ok.indexOf(t)<0)t='departures';document.documentElement.setAttribute('data-theme',t);if(p&&ok.indexOf(p)>=0)localStorage.setItem('sct-theme',t);}catch(e){}})();</script>
+  <script>(function(){try{var ok=['sorbet','lagoon','ultra','meadow','punch'];var p=new URLSearchParams(location.search).get('theme');var t=(p&&ok.indexOf(p)>=0)?p:(localStorage.getItem('sct-theme')||'lagoon');if(ok.indexOf(t)<0)t='lagoon';document.documentElement.setAttribute('data-theme',t);if(p&&ok.indexOf(p)>=0)localStorage.setItem('sct-theme',t);}catch(e){}})();</script>
   <title>Serena Chua Travel — Your days, dialled in</title>
   <meta name="description" content="Bespoke day-by-day itinerary planning. You bring the city, hotel and dates; I plan what you actually do — tuned to you." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Space+Grotesk:wght@500;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Cormorant+Garamond:wght@600;700&family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fredoka:wght@500;600;700&family=Unbounded:wght@700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="page-home dark">
@@ -62,30 +62,30 @@
         <span class="themes__hint">Live preview · your choice follows you across the site</span>
       </div>
       <div class="themes__grid">
-        <button class="tcard" data-t="departures" onclick="setTheme('departures')" aria-pressed="true">
-          <span class="tcard__name" style="font-family:'Saira Condensed',sans-serif">Departures</span>
-          <span class="tcard__tag">Signage · navy</span>
-          <span class="tcard__sw"><i style="background:#122a3a"></i><i style="background:#ece7dc"></i><i style="background:#e9a23b"></i></span>
+        <button class="tcard" data-t="sorbet" onclick="setTheme('sorbet')" aria-pressed="false">
+          <span class="tcard__name" style="font-family:'Fraunces',serif">Sorbet</span>
+          <span class="tcard__tag">Coral · pink · gold</span>
+          <span class="tcard__grad" style="background:linear-gradient(125deg,#ff7a59,#ff4d8d 52%,#ffb64d)"></span>
         </button>
-        <button class="tcard" data-t="atlas" onclick="setTheme('atlas')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Space Grotesk',sans-serif">Atlas</span>
-          <span class="tcard__tag">Cartographic · forest</span>
-          <span class="tcard__sw"><i style="background:#1f3d2f"></i><i style="background:#efe9db"></i><i style="background:#cf7a3f"></i></span>
+        <button class="tcard" data-t="lagoon" onclick="setTheme('lagoon')" aria-pressed="true">
+          <span class="tcard__name" style="font-family:'Space Grotesk',sans-serif">Lagoon</span>
+          <span class="tcard__tag">Teal · blue · violet</span>
+          <span class="tcard__grad" style="background:linear-gradient(125deg,#2ad0c3,#2f6bff 52%,#7b5cff)"></span>
         </button>
-        <button class="tcard" data-t="riviera" onclick="setTheme('riviera')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Bricolage Grotesque',sans-serif">Riviera</span>
-          <span class="tcard__tag">Coastal · sea</span>
-          <span class="tcard__sw"><i style="background:#0f4c81"></i><i style="background:#f7f0e4"></i><i style="background:#ef6f5c"></i></span>
+        <button class="tcard" data-t="ultra" onclick="setTheme('ultra')" aria-pressed="false">
+          <span class="tcard__name" style="font-family:'Bricolage Grotesque',sans-serif">Ultra</span>
+          <span class="tcard__tag">Violet · fuchsia · blue</span>
+          <span class="tcard__grad" style="background:linear-gradient(125deg,#7a2cff,#ff3ea5 54%,#3a7bff)"></span>
         </button>
-        <button class="tcard" data-t="nocturne" onclick="setTheme('nocturne')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Cormorant Garamond',serif">Nocturne</span>
-          <span class="tcard__tag">Nocturne · gold</span>
-          <span class="tcard__sw"><i style="background:#161326"></i><i style="background:#e9e6f0"></i><i style="background:#cba14e"></i></span>
+        <button class="tcard" data-t="meadow" onclick="setTheme('meadow')" aria-pressed="false">
+          <span class="tcard__name" style="font-family:'Fredoka',sans-serif">Meadow</span>
+          <span class="tcard__tag">Lime · emerald · aqua</span>
+          <span class="tcard__grad" style="background:linear-gradient(125deg,#aef05a,#22c98a 52%,#12c2c2)"></span>
         </button>
-        <button class="tcard" data-t="sunbaked" onclick="setTheme('sunbaked')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Fraunces',serif">Sunbaked</span>
-          <span class="tcard__tag">Mediterranean · clay</span>
-          <span class="tcard__sw"><i style="background:#7a3b28"></i><i style="background:#f0e5d4"></i><i style="background:#2f8071"></i></span>
+        <button class="tcard" data-t="punch" onclick="setTheme('punch')" aria-pressed="false">
+          <span class="tcard__name" style="font-family:'Unbounded',sans-serif">Punch</span>
+          <span class="tcard__tag">Magenta · red · amber</span>
+          <span class="tcard__grad" style="background:linear-gradient(125deg,#ff2e7e,#ff5e3a 52%,#ffc531)"></span>
         </button>
       </div>
     </section>
@@ -106,7 +106,7 @@
     }
     // reflect the theme applied on load (from ?theme= or storage)
     (function(){
-      var t = document.documentElement.getAttribute('data-theme') || 'departures';
+      var t = document.documentElement.getAttribute('data-theme') || 'lagoon';
       document.querySelectorAll('.tcard').forEach(function(c){
         c.setAttribute('aria-pressed', c.getAttribute('data-t') === t ? 'true' : 'false');
       });
