@@ -48,7 +48,7 @@ theme.
 
 | File | Page | Layout | Job |
 |------|------|--------|-----|
-| `index.html` | Home | Hero + itinerary teaser card | "Your days, dialled in" — pitch + a sample day |
+| `index.html` | Home | Hero + platitude stickers + testimonials + theme picker | Sells the feeling ("all sorted") plus social proof |
 | `how-it-works.html` | How it works | Numbered flow + tuning "dials" | Brief → plan → itinerary, and what it's tuned to |
 | `sample.html` | Sample | **Strict ⇆ Options toggle** over a PDF viewer | Show the two formats as the real PDF you'd receive |
 | `about.html` | About | Passport spread | Who plans your days |
@@ -109,6 +109,7 @@ Forms, Getform, Web3Forms.
 
 - [ ] **Portrait** — real photo in `about.html` (the striped block)
 - [ ] **`[TBC]` facts** — city, contact email
+- [ ] **Testimonials** — home page quotes are examples; swap for real ones as trips wrap
 - [ ] **Form endpoint** — Formspree ID (see above)
 - [ ] **Sample PDFs** — city-agnostic demo; edit `pdf/itinerary-*.html` and regenerate
 - [ ] **Turnaround / tweak claims** — confirm the numbers on `about.html`

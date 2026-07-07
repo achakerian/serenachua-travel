@@ -200,6 +200,36 @@ body.page-home .nav, body.page-home main, body.page-home .foot { position: relat
 .daycard .slot__time { color: var(--on-grad); opacity: .85; }
 .daycard .slot__note { color: var(--on-grad-muted); }
 
+/* platitude stickers — the hero's playful signature */
+.stickers { display: flex; flex-wrap: wrap; gap: 16px; align-content: center; justify-content: center; min-height: 340px; }
+.sticker {
+  font-family: var(--display); font-weight: 800; text-transform: uppercase; line-height: .95;
+  padding: 16px 26px; border-radius: 999px; transform: rotate(var(--r, 0deg));
+  box-shadow: 0 16px 34px -16px rgba(0,0,0,.42); white-space: nowrap; display: inline-flex; align-items: center; gap: .35em;
+  transition: transform .2s ease;
+}
+.sticker:hover { transform: rotate(var(--r, 0deg)) scale(1.05); }
+.sticker--white   { background: #fff; color: var(--ink); }
+.sticker--ink     { background: var(--navy); color: #fff; }
+.sticker--outline { background: transparent; color: var(--on-grad); box-shadow: none; border: 2px solid color-mix(in srgb, var(--on-grad) 55%, transparent); }
+.sticker--sm { font-size: clamp(17px, 2.1vw, 24px); }
+.sticker--md { font-size: clamp(21px, 2.8vw, 32px); }
+.sticker--lg { font-size: clamp(28px, 4.3vw, 50px); padding: 20px 32px; }
+.sticker em { font-style: normal; color: var(--amber); }
+.sticker--white em { color: var(--amber-deep); }
+
+/* testimonials — frosted quote cards over the gradient */
+.quotes-wrap { padding: 0 0 3vh; }
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.quote {
+  margin: 0; background: color-mix(in srgb, var(--bone) 15%, transparent);
+  border: 1px solid rgba(255,255,255,.28); border-radius: var(--radius); padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.quote p { margin: 0 0 16px; font-size: 18px; line-height: 1.42; color: var(--on-grad); font-weight: 500; }
+.quote figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--on-grad-muted); }
+@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } .stickers { min-height: 0; padding: 10px 0; } }
+
 /* reveal */
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
