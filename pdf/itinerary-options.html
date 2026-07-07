@@ -5,29 +5,44 @@
   <title>Sample itinerary — options</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     @page { size: A4; margin: 0; }
     * { box-sizing: border-box; }
     html, body { margin: 0; }
     body { width: 794px; font-family: "Inter", sans-serif; color: #16222c; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .head { background: #122a3a; color: #ece7dc; padding: 44px 52px 34px; }
+
+    .head { background: #122a3a; color: #ece7dc; padding: 40px 48px 28px; }
     .brand { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; }
     .brand b { color: #e9a23b; }
-    .title { font-family: "Saira Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 66px; line-height: .88; letter-spacing: -.01em; margin: 20px 0 0; }
-    .sub { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8ca3b2; margin-top: 12px; }
+    .title { font-family: "Saira Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 60px; line-height: .88; letter-spacing: -.01em; margin: 16px 0 0; }
+    .sub { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #8ca3b2; margin-top: 12px; }
     .sub b { color: #ece7dc; font-weight: 500; }
-    .tag { display: inline-block; background: #e9a23b; color: #122a3a; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; margin-top: 18px; }
-    .body { padding: 22px 52px 30px; }
-    .band { padding: 15px 0; border-bottom: 1px solid #e4e1d8; }
+    .tag { display: inline-block; background: #e9a23b; color: #122a3a; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; margin-top: 16px; }
+    .note { margin-top: 14px; font-size: 12px; color: #b7c6d1; max-width: 62ch; line-height: 1.5; }
+
+    .body { padding: 18px 48px 8px; }
+    .band { padding: 14px 0 16px; border-bottom: 1px solid #e7e3d9; break-inside: avoid; }
     .band:last-child { border-bottom: none; }
-    .bl { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 21px; letter-spacing: .02em; margin-bottom: 8px; }
-    .bl span { font-family: "JetBrains Mono", monospace; font-size: 11px; color: #cf8a24; letter-spacing: .1em; margin-left: 10px; }
-    .opt { display: flex; gap: 12px; padding: 6px 0; align-items: baseline; }
-    .dot { color: #122a3a; font-size: 15px; line-height: 1; flex: none; }
-    .on { font-weight: 600; }
-    .oe { color: #55636e; }
-    .foot { padding: 18px 52px 40px; border-top: 2px solid #122a3a; margin-top: 6px; display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8896a0; }
+    .bl { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+    .bl b { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 24px; letter-spacing: .02em; }
+    .bl span { font-family: "JetBrains Mono", monospace; font-size: 10px; color: #cf8a24; letter-spacing: .1em; text-transform: uppercase; }
+
+    .opt { display: grid; grid-template-columns: 22px 1fr; gap: 10px; padding: 7px 0; align-items: start; }
+    .dot { font-size: 15px; line-height: 1.3; color: #122a3a; }
+    .on { font-weight: 600; font-size: 14.5px; }
+    .oe { color: #55636e; font-size: 13.5px; }
+    .om { display: flex; flex-wrap: wrap; gap: 3px 16px; margin-top: 3px; font-size: 12px; }
+    .om i { font-style: normal; color: #4a5862; }
+    .om b { font-family: "JetBrains Mono", monospace; font-size: 9px; letter-spacing: .07em; color: #cf8a24; text-transform: uppercase; margin-right: 5px; }
+    .om .w { color: #96712a; }
+
+    .foot { padding: 6px 48px 34px; }
+    .total { display: flex; justify-content: space-between; align-items: center; background: #122a3a; color: #ece7dc; border-radius: 10px; padding: 16px 22px; }
+    .total .l { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8ca3b2; max-width: 46ch; }
+    .total .v { font-family: "Saira Condensed", sans-serif; font-weight: 700; font-size: 26px; line-height: 1; text-align: right; }
+    .total .v small { font-family: "JetBrains Mono", monospace; font-size: 10px; color: #8ca3b2; letter-spacing: .08em; display: block; margin-top: 4px; }
+    .sign { margin-top: 14px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #8896a0; display: flex; justify-content: space-between; }
   </style>
 </head>
 <body>
@@ -36,38 +51,86 @@
     <h1 class="title">Day 01</h1>
     <div class="sub">Your destination · Wakes <b>07:30</b> · Budget <b>mid</b></div>
     <span class="tag">Options — your pick</span>
+    <p class="note">Pick one per part of the day. Once you choose, I lock in bookings and add the exact address, cost and a “tell the driver” card (in the local language) for each — same detail as the strict plan.</p>
   </div>
 
   <div class="body">
+
     <div class="band">
-      <div class="bl">Morning <span>Pick one</span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Old town on foot</span> — <span class="oe">historic quarter, quiet early.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Green space &amp; gardens</span> — <span class="oe">a slower, greener start.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Market + long coffee</span> — <span class="oe">ease into the day.</span></span></div>
+      <div class="bl"><b>Morning</b><span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Old town on foot</span> — <span class="oe">historic quarter, quiet before the crowds.</span>
+        <div class="om"><i><b>Cost</b>Free · tower £4</i><i><b>Where</b>Old Town, north gate</i><i class="w"><b>Watch out</b>cobbles; pickpockets near the square</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Green space &amp; gardens</span> — <span class="oe">a slower, greener start with a coffee.</span>
+        <div class="om"><i><b>Cost</b>£6 entry</i><i><b>Where</b>Botanical Gardens</i><i class="w"><b>Watch out</b>little shade — take water &amp; a hat</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Market + long coffee</span> — <span class="oe">ease into the day, no rush.</span>
+        <div class="om"><i><b>Cost</b>~£10</i><i><b>Where</b>Central Market</i><i class="w"><b>Watch out</b>cash only; closes ~14:00</i></div>
+      </span></div>
     </div>
+
     <div class="band">
-      <div class="bl">Midday <span>Pick one</span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Local counter</span> — <span class="oe">booked, within budget.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Street-food row</span> — <span class="oe">quick, cheap, excellent.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Deli picnic</span> — <span class="oe">grab &amp; go to a park.</span></span></div>
+      <div class="bl"><b>Midday</b><span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Local counter</span> — <span class="oe">the spot locals actually queue for.</span>
+        <div class="om"><i><b>Cost</b>~£18 pp</i><i><b>Where</b>Riverside</i><i class="w"><b>Watch out</b>I'll book it — 90-min table</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Street-food row</span> — <span class="oe">quick, cheap, excellent.</span>
+        <div class="om"><i><b>Cost</b>~£8 pp</i><i><b>Where</b>Old Town lanes</i><i class="w"><b>Watch out</b>busiest 12–1; go either side</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Deli picnic</span> — <span class="oe">grab &amp; go to the park.</span>
+        <div class="om"><i><b>Cost</b>~£12</i><i><b>Where</b>Market deli + gardens</i><i class="w"><b>Watch out</b>no bins in the park — carry it out</i></div>
+      </span></div>
     </div>
+
     <div class="band">
-      <div class="bl">Afternoon <span>Pick one</span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Signature museum</span> — <span class="oe">the one worth your time.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Design district</span> — <span class="oe">artisans, shops, side streets.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Waterfront walk</span> — <span class="oe">easy miles, big views.</span></span></div>
+      <div class="bl"><b>Afternoon</b><span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Signature museum</span> — <span class="oe">the one collection worth your time.</span>
+        <div class="om"><i><b>Cost</b>£14</i><i><b>Where</b>Museum Quarter</i><i class="w"><b>Watch out</b>no big bags; free cloakroom</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Design district</span> — <span class="oe">artisans, shops and side streets.</span>
+        <div class="om"><i><b>Cost</b>Free to wander</i><i><b>Where</b>Maker's Quarter</i><i class="w"><b>Watch out</b>many places shut 2–4</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Waterfront walk</span> — <span class="oe">easy miles, big views.</span>
+        <div class="om"><i><b>Cost</b>Free</i><i><b>Where</b>Harbour promenade</i><i class="w"><b>Watch out</b>windy by the water — layer up</i></div>
+      </span></div>
     </div>
+
     <div class="band">
-      <div class="bl">Evening <span>Pick one</span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Tasting menu</span> — <span class="oe">splurge night, booked.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Bistro quarter</span> — <span class="oe">lively, lantern-lit.</span></span></div>
-      <div class="opt"><span class="dot">○</span><span><span class="on">Early night</span> — <span class="oe">light bite near your base.</span></span></div>
+      <div class="bl"><b>Evening</b><span>Pick one</span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Tasting menu</span> — <span class="oe">splurge night, one to remember.</span>
+        <div class="om"><i><b>Cost</b>~£65 pp</i><i><b>Where</b>Uptown</i><i class="w"><b>Watch out</b>books out early — say the word</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Bistro quarter</span> — <span class="oe">lively and lantern-lit.</span>
+        <div class="om"><i><b>Cost</b>~£35 pp</i><i><b>Where</b>Lantern District</i><i class="w"><b>Watch out</b>cash tip is the norm</i></div>
+      </span></div>
+      <div class="opt"><span class="dot">○</span><span>
+        <span class="on">Early night</span> — <span class="oe">light bite near your base.</span>
+        <div class="om"><i><b>Cost</b>~£15 pp</i><i><b>Where</b>By your hotel</i><i class="w"><b>Watch out</b>kitchens close ~21:30</i></div>
+      </span></div>
     </div>
+
   </div>
 
   <div class="foot">
-    <span>Planned for you · hello@serenachua.travel</span>
-    <span>Sample · Page 1</span>
+    <div class="total">
+      <span class="l">Day cost depends on your picks — I'll total it once you choose.</span>
+      <span class="v">≈ £45–140<small>per person · excl. hotel</small></span>
+    </div>
+    <div class="sign">
+      <span>Planned for you · hello@serenachua.travel</span>
+      <span>Sample itinerary · questions? just message me</span>
+    </div>
   </div>
 </body>
 </html>

@@ -5,51 +5,173 @@
   <title>Sample itinerary — strict</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     @page { size: A4; margin: 0; }
     * { box-sizing: border-box; }
     html, body { margin: 0; }
     body { width: 794px; font-family: "Inter", sans-serif; color: #16222c; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .head { background: #122a3a; color: #ece7dc; padding: 44px 52px 34px; }
+
+    .head { background: #122a3a; color: #ece7dc; padding: 40px 48px 28px; }
     .brand { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; }
     .brand b { color: #e9a23b; }
-    .title { font-family: "Saira Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 66px; line-height: .88; letter-spacing: -.01em; margin: 20px 0 0; }
-    .sub { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8ca3b2; margin-top: 12px; }
+    .title { font-family: "Saira Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 60px; line-height: .88; letter-spacing: -.01em; margin: 16px 0 0; }
+    .sub { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #8ca3b2; margin-top: 12px; }
     .sub b { color: #ece7dc; font-weight: 500; }
-    .tag { display: inline-block; background: #e9a23b; color: #122a3a; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; margin-top: 18px; }
-    .body { padding: 20px 52px 30px; }
-    .row { display: flex; gap: 26px; padding: 13px 0; border-bottom: 1px solid #e4e1d8; }
-    .row:last-child { border-bottom: none; }
-    .t { font-family: "JetBrains Mono", monospace; font-size: 13px; letter-spacing: .04em; color: #cf8a24; width: 62px; flex: none; padding-top: 3px; }
-    .n { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 23px; line-height: 1; letter-spacing: .01em; }
-    .note { font-size: 13px; color: #55636e; margin-top: 4px; }
-    .foot { padding: 18px 52px 40px; border-top: 2px solid #122a3a; margin-top: 6px; display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8896a0; }
+    .tag { display: inline-block; background: #e9a23b; color: #122a3a; font-family: "JetBrains Mono", monospace; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 5px 11px; margin-top: 16px; }
+
+    .body { padding: 16px 48px 8px; }
+    .stop { display: grid; grid-template-columns: 60px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid #e7e3d9; break-inside: avoid; }
+    .stop:last-child { border-bottom: none; }
+    .time { font-family: "JetBrains Mono", monospace; font-size: 13px; color: #cf8a24; padding-top: 3px; white-space: nowrap; }
+    .time small { display: block; color: #9aa4ad; font-size: 10px; margin-top: 3px; }
+
+    .row1 { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .name { font-family: "Saira Condensed", sans-serif; font-weight: 700; text-transform: uppercase; font-size: 23px; line-height: 1; letter-spacing: .01em; }
+    .badge { font-family: "JetBrains Mono", monospace; font-size: 9px; letter-spacing: .1em; padding: 3px 8px; border-radius: 3px; text-transform: uppercase; background: #eef0f2; color: #5a6873; }
+    .badge--book { background: #e9a23b; color: #122a3a; }
+    .desc { margin: 6px 0 9px; font-size: 13.5px; color: #4a5862; line-height: 1.45; }
+
+    .meta { display: flex; flex-wrap: wrap; gap: 5px 20px; font-size: 12.5px; margin-bottom: 9px; }
+    .meta i { font-style: normal; }
+    .meta b { font-family: "JetBrains Mono", monospace; font-size: 9.5px; letter-spacing: .08em; color: #cf8a24; text-transform: uppercase; margin-right: 6px; }
+
+    .warn { font-size: 12.5px; color: #7a5a1e; background: #fdf3dc; border-left: 3px solid #e9a23b; padding: 7px 11px; margin: 8px 0 0; border-radius: 0 4px 4px 0; }
+    .warn b { font-family: "JetBrains Mono", monospace; font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; margin-right: 6px; }
+
+    .driver { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+    .driver .lab { font-family: "JetBrains Mono", monospace; font-size: 9.5px; letter-spacing: .08em; color: #8896a0; text-transform: uppercase; white-space: nowrap; }
+    .driver .box { border: 1.5px dashed #b9c2c9; border-radius: 7px; padding: 7px 13px; font-size: 14px; font-weight: 600; color: #16222c; background: #f7f5ef; }
+    .driver .box span { color: #9aa4ad; font-weight: 400; font-size: 11px; margin-left: 8px; }
+
+    .foot { padding: 4px 48px 34px; }
+    .total { display: flex; justify-content: space-between; align-items: center; background: #122a3a; color: #ece7dc; border-radius: 10px; padding: 16px 22px; }
+    .total .l { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8ca3b2; }
+    .total .v { font-family: "Saira Condensed", sans-serif; font-weight: 700; font-size: 30px; line-height: 1; }
+    .total .v small { font-family: "JetBrains Mono", monospace; font-size: 11px; color: #8ca3b2; letter-spacing: .08em; }
+    .sign { margin-top: 14px; font-family: "JetBrains Mono", monospace; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: #8896a0; display: flex; justify-content: space-between; }
   </style>
 </head>
 <body>
   <div class="head">
     <div class="brand">Serena Chua<b>·</b>Travel</div>
     <h1 class="title">Day 01</h1>
-    <div class="sub">Your destination · Wakes <b>07:30</b> · Budget <b>mid</b></div>
+    <div class="sub">Your destination · Wakes <b>07:30</b> · Budget <b>mid</b> · Weather <b>warm, clear</b></div>
     <span class="tag">Strict — quarter-hour</span>
   </div>
 
   <div class="body">
-    <div class="row"><span class="t">08:00</span><span><span class="n">Breakfast</span><div class="note">At the hotel, kept light — long day ahead.</div></span></div>
-    <div class="row"><span class="t">08:45</span><span><span class="n">Old town on foot</span><div class="note">The historic quarter before the crowds arrive.</div></span></div>
-    <div class="row"><span class="t">10:30</span><span><span class="n">Central market</span><div class="note">Graze the stalls — a little of whatever's good today.</div></span></div>
-    <div class="row"><span class="t">12:15</span><span><span class="n">Lunch — booked</span><div class="note">A local counter I rate. Reserved, within budget.</div></span></div>
-    <div class="row"><span class="t">13:45</span><span><span class="n">City museum</span><div class="note">The one collection worth your afternoon.</div></span></div>
-    <div class="row"><span class="t">15:15</span><span><span class="n">Coffee</span><div class="note">A neighbourhood café — sit for twenty.</div></span></div>
-    <div class="row"><span class="t">16:00</span><span><span class="n">Viewpoint</span><div class="note">Up for golden hour over the rooftops.</div></span></div>
-    <div class="row"><span class="t">17:45</span><span><span class="n">Back to base</span><div class="note">Rest and reset before dinner.</div></span></div>
-    <div class="row"><span class="t">19:30</span><span><span class="n">Dinner — booked</span><div class="note">Table held under your name.</div></span></div>
+
+    <div class="stop">
+      <div class="time">08:00<small>45 min</small></div>
+      <div class="card">
+        <div class="row1"><span class="name">Breakfast at your hotel</span><span class="badge">Included</span></div>
+        <div class="desc">Fuel up but keep it light — it's a long, good day ahead.</div>
+        <div class="meta">
+          <i><b>Cost</b>Included in your stay</i>
+          <i><b>Where</b>Hotel dining room, ground floor</i>
+        </div>
+        <div class="warn"><b>Watch out</b>Gets busy after 08:30 — go down early to beat the coach groups.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">08:45<small>1h 45m</small></div>
+      <div class="card">
+        <div class="row1"><span class="name">Old town — north gate</span></div>
+        <div class="desc">Wander the historic quarter while it's quiet, up to the bell tower for the view.</div>
+        <div class="meta">
+          <i><b>Cost</b>Free · tower £4</i>
+          <i><b>Where</b>Old Town, north entrance</i>
+          <i><b>Getting there</b>10-min taxi from hotel</i>
+        </div>
+        <div class="warn"><b>Watch out</b>Cobbles — wear comfy shoes. Keep bags zipped near the main square, it's a known pickpocket spot.</div>
+        <div class="driver">
+          <span class="lab">Tell the driver</span>
+          <span class="box">“Old town, north gate, please.”<span>— printed in the local language on your card</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">10:30<small>1h 15m</small></div>
+      <div class="card">
+        <div class="row1"><span class="name">Central market</span></div>
+        <div class="desc">Graze the stalls — try the local specialty and a fresh juice.</div>
+        <div class="meta">
+          <i><b>Cost</b>~£8–12 for snacks</i>
+          <i><b>Where</b>Market Hall, Row 2</i>
+          <i><b>Getting there</b>8-min walk downhill</i>
+        </div>
+        <div class="warn"><b>Watch out</b>Cash only, and most stalls pack up by 14:00. Skip the first stall inside the door — tourist prices.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">12:15<small>1h 30m</small></div>
+      <div class="card">
+        <div class="row1"><span class="name">Lunch</span><span class="badge badge--book">Booked · under your name</span></div>
+        <div class="desc">Counter seats held for two at a spot the locals actually eat at.</div>
+        <div class="meta">
+          <i><b>Cost</b>~£18 pp · set menu</i>
+          <i><b>Where</b>Riverside, east bank</i>
+          <i><b>Getting there</b>6-min walk</i>
+        </div>
+        <div class="warn"><b>Watch out</b>They hold the table 90 minutes — arrive on time. Tap water is fine; bottled is charged.</div>
+        <div class="driver">
+          <span class="lab">Tell the driver</span>
+          <span class="box">“Riverside, east bank — the fish restaurant.”<span>— local-language card in your pack</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">14:00<small>2h</small></div>
+      <div class="card">
+        <div class="row1"><span class="name">Signature museum</span><span class="badge badge--book">Pre-booked · skip the line</span></div>
+        <div class="desc">The one collection worth your afternoon — head to the top floor first, work down.</div>
+        <div class="meta">
+          <i><b>Cost</b>£14 · already paid</i>
+          <i><b>Where</b>Museum Quarter</i>
+          <i><b>Getting there</b>12-min taxi</i>
+        </div>
+        <div class="warn"><b>Watch out</b>Big bags aren't allowed inside — there's a free cloakroom to the left of the entrance.</div>
+        <div class="driver">
+          <span class="lab">Tell the driver</span>
+          <span class="box">“The main museum, Museum Quarter.”<span>— local-language card in your pack</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">19:30<small>2h</small></div>
+      <div class="card">
+        <div class="row1"><span class="name">Dinner</span><span class="badge badge--book">Booked · 19:30</span></div>
+        <div class="desc">Lively, lantern-lit spot in the old district. Table's held — just give your name.</div>
+        <div class="meta">
+          <i><b>Cost</b>~£35 pp · pay there</i>
+          <i><b>Where</b>Lantern District</i>
+          <i><b>Getting there</b>15-min taxi</i>
+        </div>
+        <div class="warn"><b>Watch out</b>Small cash tip is the norm here. It gets busy after 20:00 — taxis back are easy from the main street.</div>
+        <div class="driver">
+          <span class="lab">Tell the driver</span>
+          <span class="box">“Lantern District, the old teahouse corner.”<span>— local-language card in your pack</span></span>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="foot">
-    <span>Planned for you · hello@serenachua.travel</span>
-    <span>Sample · Page 1</span>
+    <div class="total">
+      <span class="l">Day cost estimate · per person, excl. hotel</span>
+      <span class="v">≈ £95<small> / person</small></span>
+    </div>
+    <div class="sign">
+      <span>Planned for you · hello@serenachua.travel</span>
+      <span>Sample itinerary · questions? just message me</span>
+    </div>
   </div>
 </body>
 </html>
