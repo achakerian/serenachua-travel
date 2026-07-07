@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serena Chua Travel — Where to?</title>
-  <meta name="description" content="Independent travel agent. Personally planned trips, booked by a human." />
+  <title>Serena Chua Travel — Your days, dialled in</title>
+  <meta name="description" content="Bespoke day-by-day itinerary planning. You bring the city, hotel and dates; I plan what you actually do — tuned to you." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -16,62 +16,48 @@
     <a class="nav__brand" href="index.html">SERENA CHUA<b>·</b>TRAVEL</a>
     <button class="nav__toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">Menu</button>
     <div class="nav__links">
+      <a href="how-it-works.html">How it works</a>
+      <a href="sample.html">Sample</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="packages.html">Trips</a>
-      <a href="contact.html">Enquire</a>
+      <a href="contact.html">Start</a>
     </div>
     <span class="nav__code">SCT·001</span>
   </nav>
 
   <main class="wrap">
-    <section class="home-hero">
-      <div class="home-hero__kicker reveal">
-        <span class="code">Independent travel agent</span>
-        <span class="line"></span>
-        <span class="code code--muted">Est. 2026 · <span class="tbc">[City]</span></span>
+    <section class="home">
+      <div>
+        <div class="home__kicker reveal">
+          <span class="code">Bespoke itinerary planning</span>
+          <span class="line"></span>
+        </div>
+        <h1 class="home__title reveal">Your days,<br>dialled&nbsp;in<span>.</span></h1>
+        <p class="home__sub reveal">You bring the city, the hotel and the dates. I plan what you actually do each day — down to the quarter-hour, or loose with options — tuned to when you wake, what you love, and your budget.</p>
+        <div class="home__cta reveal">
+          <a class="btn btn--amber" href="contact.html">Start your brief <span class="btn__arrow">→</span></a>
+          <span class="note">A plan comes back, no fixed packages.</span>
+        </div>
       </div>
-      <h1 class="home-hero__title reveal">Where<br>to<span>?</span></h1>
-      <p class="home-hero__sub reveal">Tell me the trip you're dreaming about. I plan it, book it, and stay on the line for the whole thing — the way travel used to work.</p>
-    </section>
 
-    <!-- Departures board: the signature -->
-    <section class="board" aria-label="Now booking">
-      <div class="board__head">
-        <span>Destination</span><span>Nights</span><span>From</span><span>Style</span><span>Status</span>
+      <!-- signature: a day, planned -->
+      <div class="daycard reveal" aria-label="Sample itinerary">
+        <div class="daycard__top">
+          <h2>Kyoto · Day 1</h2>
+          <span class="code code--muted">Wakes 07:30</span>
+        </div>
+        <div class="agenda">
+          <div class="slot"><span class="slot__time">08:00</span><span><span class="slot__name">Breakfast</span><span class="slot__note">In the hotel, kept light — long day ahead.</span></span></div>
+          <div class="slot"><span class="slot__time">08:45</span><span><span class="slot__name">Fushimi Inari</span><span class="slot__note">Ahead of the crowds; up to the quiet upper gates.</span></span></div>
+          <div class="slot"><span class="slot__time">10:30</span><span><span class="slot__name">Nishiki Market</span><span class="slot__note">Snack your way through — soy-milk donut, tamago.</span></span></div>
+          <div class="slot"><span class="slot__time">12:30</span><span><span class="slot__name">Lunch — booked</span><span class="slot__note">Obanzai counter, within budget. Reserved for you.</span></span></div>
+        </div>
       </div>
-      <a class="board__row reveal" href="packages.html">
-        <span class="board__dest">Bali</span>
-        <span class="board__meta">7</span>
-        <span class="board__price">£X,XXX</span>
-        <span class="board__meta">Beach · villas</span>
-        <span class="board__status">Booking</span>
-      </a>
-      <a class="board__row reveal" href="packages.html">
-        <span class="board__dest">Maldives</span>
-        <span class="board__meta">10</span>
-        <span class="board__price">£X,XXX</span>
-        <span class="board__meta">Honeymoon</span>
-        <span class="board__status">Booking</span>
-      </a>
-      <a class="board__row reveal" href="packages.html">
-        <span class="board__dest">Tokyo</span>
-        <span class="board__meta">4</span>
-        <span class="board__price">£X,XXX</span>
-        <span class="board__meta">City break</span>
-        <span class="board__status">Booking</span>
-      </a>
-    </section>
-
-    <section class="home-cta">
-      <a class="btn btn--amber" href="contact.html">Plan my trip <span class="btn__arrow">→</span></a>
-      <p>No booking fee to enquire.</p>
     </section>
   </main>
 
   <footer class="foot">
     <span><span class="foot__mark">✦</span> Serena Chua Travel</span>
-    <a href="contact.html">Enquire →</a>
+    <a href="sample.html">See a full day →</a>
   </footer>
 
 </body>

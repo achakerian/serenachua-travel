@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serena Chua Travel — A sample day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-sample light">
+
+  <nav class="nav">
+    <a class="nav__brand" href="index.html">SERENA CHUA<b>·</b>TRAVEL</a>
+    <button class="nav__toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">Menu</button>
+    <div class="nav__links">
+      <a href="how-it-works.html">How it works</a>
+      <a href="sample.html" aria-current="page">Sample</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Start</a>
+    </div>
+    <span class="nav__code">SCT·003</span>
+  </nav>
+
+  <main class="wrap">
+    <header class="sample-head">
+      <span class="code">A sample day</span>
+      <h1>One day, two ways.</h1>
+      <p>Same city, same you. Choose a plan timed to the quarter-hour, or one that hands you options for each part of the day. This is the difference — flip it.</p>
+      <p class="sample-meta">Kyoto · Day 1 · Wakes 07:30 · Mid budget</p>
+    </header>
+
+    <section class="sample">
+      <input type="radio" name="fmt" id="fmt-strict" class="seg-input" checked>
+      <input type="radio" name="fmt" id="fmt-options" class="seg-input">
+      <div class="seg" role="tablist">
+        <label for="fmt-strict">Strict · quarter-hour</label>
+        <label for="fmt-options">Options · your pick</label>
+      </div>
+      <p class="seg-cap">Planned to the minute, or opened up so you choose as you go.</p>
+
+      <!-- STRICT -->
+      <div class="fmt fmt--strict">
+        <div class="agenda">
+          <div class="slot"><span class="slot__time">08:00</span><span><span class="slot__name">Breakfast</span><span class="slot__note">Hotel, light. Coffee to go.</span></span></div>
+          <div class="slot"><span class="slot__time">08:45</span><span><span class="slot__name">Fushimi Inari</span><span class="slot__note">Taxi over; climb to the quiet upper gates before the crowds arrive.</span></span></div>
+          <div class="slot"><span class="slot__time">10:45</span><span><span class="slot__name">Nishiki Market</span><span class="slot__note">Graze the stalls — soy-milk donut, tamago skewer.</span></span></div>
+          <div class="slot"><span class="slot__time">12:15</span><span><span class="slot__name">Lunch — booked</span><span class="slot__note">Obanzai counter. Reserved, within budget.</span></span></div>
+          <div class="slot"><span class="slot__time">13:45</span><span><span class="slot__name">Kennin-ji &amp; Gion</span><span class="slot__note">Zen garden, then the old lanes on the walk through.</span></span></div>
+          <div class="slot"><span class="slot__time">15:15</span><span><span class="slot__name">Coffee</span><span class="slot__note">% Arabica, riverside. Sit for twenty.</span></span></div>
+          <div class="slot"><span class="slot__time">16:00</span><span><span class="slot__name">Kiyomizu-dera</span><span class="slot__note">Up Sannenzaka in soft afternoon light.</span></span></div>
+          <div class="slot"><span class="slot__time">17:45</span><span><span class="slot__name">Back to hotel</span><span class="slot__note">Rest, reset before dinner.</span></span></div>
+          <div class="slot"><span class="slot__time">19:30</span><span><span class="slot__name">Dinner — booked</span><span class="slot__note">Pontocho izakaya. Table held under your name.</span></span></div>
+        </div>
+      </div>
+
+      <!-- OPTIONS -->
+      <div class="fmt fmt--options">
+        <div class="band">
+          <div class="band__label"><b>Morning</b><span>Pick one</span></div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="am"><span class="opt__name">Fushimi Inari</span><span class="opt__note">Early climb, quiet gates.</span></label>
+            <label class="opt"><input type="radio" name="am"><span class="opt__name">Arashiyama</span><span class="opt__note">Bamboo grove, riverside.</span></label>
+            <label class="opt"><input type="radio" name="am"><span class="opt__name">Slow start</span><span class="opt__note">Market browse + long coffee.</span></label>
+          </div>
+        </div>
+        <div class="band">
+          <div class="band__label"><b>Midday</b><span>Pick one</span></div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="mid"><span class="opt__name">Obanzai counter</span><span class="opt__note">Booked, in budget.</span></label>
+            <label class="opt"><input type="radio" name="mid"><span class="opt__name">Ramen alley</span><span class="opt__note">Quick, cheap, excellent.</span></label>
+            <label class="opt"><input type="radio" name="mid"><span class="opt__name">Depachika</span><span class="opt__note">Food-hall picnic to go.</span></label>
+          </div>
+        </div>
+        <div class="band">
+          <div class="band__label"><b>Afternoon</b><span>Pick one</span></div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="pm"><span class="opt__name">Kiyomizu-dera</span><span class="opt__note">Temple + Sannenzaka lanes.</span></label>
+            <label class="opt"><input type="radio" name="pm"><span class="opt__name">Kennin-ji</span><span class="opt__note">Zen garden, then Gion.</span></label>
+            <label class="opt"><input type="radio" name="pm"><span class="opt__name">Philosopher's Path</span><span class="opt__note">Quiet canal-side walk.</span></label>
+          </div>
+        </div>
+        <div class="band">
+          <div class="band__label"><b>Evening</b><span>Pick one</span></div>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="eve"><span class="opt__name">Kaiseki</span><span class="opt__note">Splurge night, booked.</span></label>
+            <label class="opt"><input type="radio" name="eve"><span class="opt__name">Pontocho izakaya</span><span class="opt__note">Lively, lantern-lit.</span></label>
+            <label class="opt"><input type="radio" name="eve"><span class="opt__name">Early night</span><span class="opt__note">Light bite near the hotel.</span></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="home__cta" style="padding-bottom:8vh">
+      <a class="btn btn--ghost-dark" href="contact.html">Brief me on your trip <span class="btn__arrow">→</span></a>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <span><span class="foot__mark">✦</span> Serena Chua Travel</span>
+    <a href="how-it-works.html">How it works →</a>
+  </footer>
+
+</body>
+</html>
