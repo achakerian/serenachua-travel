@@ -23,70 +23,53 @@
     <a class="nav__cta" href="contact.html" aria-current="page">Start</a>
   </nav>
 
-  <main class="wrap slip-wrap">
+  <main class="wrap start">
     <!-- Static sites can't email form data. Point action= at a Formspree
          (or Netlify Forms) endpoint: replace YOUR_FORM_ID below. -->
-    <form class="slip" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="slip__top">
-        <h1>Trip brief</h1>
-        <span class="code">SCT · 005</span>
+    <form class="airmail" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="airmail__stamp" aria-hidden="true"><span class="type">Air<br>Mail</span></div>
+      <div class="airmail__rule" aria-hidden="true"></div>
+
+      <div class="linefield"><label for="name" class="type">Name:</label><input id="name" name="name" type="text" required></div>
+      <div class="linefield"><label for="email" class="type">Email:</label><input id="email" name="email" type="email" required></div>
+      <div class="linefield"><label for="city" class="type">City:</label><input id="city" name="city" type="text" required></div>
+      <div class="linefield"><label for="travellers" class="type">No. of Travellers:</label><input id="travellers" name="travellers" type="number" min="1" value="2"></div>
+      <div class="linefield"><label for="dates" class="type">Dates:</label><input id="dates" name="dates" type="text" placeholder="e.g. 12–15 Sept"></div>
+
+      <div class="linefield linefield--wake">
+        <label class="type" for="wake-h">Typical wake-up:</label>
+        <span class="spinner">
+          <select id="wake-h" name="wake_hour" aria-label="Hour">
+            <option>05</option><option selected>06</option><option>07</option><option>08</option><option>09</option><option>10</option>
+          </select>
+          <select name="wake_min" aria-label="Minute"><option>00</option><option selected>15</option><option>30</option><option>45</option></select>
+          <select name="wake_ampm" aria-label="AM or PM"><option selected>AM</option><option>PM</option></select>
+        </span>
       </div>
-      <div class="slip__body">
-        <p>The more you tell me, the sharper the plan. I'll come back with an approach and a quote — no fee to ask.</p>
-        <div class="form">
 
-          <div class="form__row">
-            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-          </div>
-
-          <div class="form__row">
-            <div class="field"><label for="city">City</label><input id="city" name="city" type="text" placeholder="Where are you going?" required></div>
-            <div class="field"><label for="hotel">Hotel / area</label><input id="hotel" name="hotel" type="text" placeholder="Where you're based"></div>
-          </div>
-
-          <div class="form__row">
-            <div class="field"><label for="dates">Dates you're free</label><input id="dates" name="dates" type="text" placeholder="e.g. 12–15 Sept"></div>
-            <div class="field"><label for="wake">Typical wake-up</label><input id="wake" name="wake_time" type="time" value="08:00"></div>
-          </div>
-
-          <div class="field">
-            <span class="field-label">Interests</span>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="interests" value="Sightseeing">Sightseeing</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Food">Quality food</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Hiking">Hiking</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Nature">Nature</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Art">Art &amp; museums</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Nightlife">Nightlife</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Shopping">Shopping</label>
-              <label class="chip"><input type="checkbox" name="interests" value="Relax">Slow &amp; relaxed</label>
-            </div>
-          </div>
-
-          <div class="form__row">
-            <div class="field"><label for="budget">Daily budget guide</label><input id="budget" name="budget" type="text" placeholder="e.g. £150 pp/day"></div>
-            <div class="field">
-              <span class="field-label">Plan format</span>
-              <div class="chips">
-                <label class="chip"><input type="radio" name="format" value="Strict">Strict</label>
-                <label class="chip"><input type="radio" name="format" value="Options">Options</label>
-                <label class="chip"><input type="radio" name="format" value="Unsure">Not sure yet</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="message">Anything else</label>
-            <textarea id="message" name="message" placeholder="Who's travelling, the occasion, must-dos, must-avoids, dietary needs…"></textarea>
-          </div>
-
-          <div class="slip__submit">
-            <button class="btn btn--ghost-dark" type="submit">Send brief <span class="btn__arrow">→</span></button>
-            <span class="code">No fee to ask</span>
-          </div>
-        </div>
+      <div class="linefield linefield--chips">
+        <span class="type">Interests:</span>
+        <span class="pills">
+          <label class="pill"><input type="checkbox" name="interests" value="City">City</label>
+          <label class="pill"><input type="checkbox" name="interests" value="Country">Country</label>
+          <label class="pill"><input type="checkbox" name="interests" value="Gourmet">Gourmet</label>
+          <label class="pill"><input type="checkbox" name="interests" value="Arts">Arts</label>
+        </span>
       </div>
+
+      <div class="linefield"><label for="budget" class="type">Daily budget:</label><input id="budget" name="budget" type="text" placeholder="e.g. £150 pp/day"></div>
+      <div class="linefield"><label for="format" class="type">Plan format:</label><input id="format" name="format" type="text" placeholder="Strict / Options / Not sure"></div>
+      <div class="linefield"><label for="others" class="type">Others:</label><input id="others" name="others" type="text"></div>
+
+      <div class="dropzones">
+        <div class="dz"><span class="dz__label type">Flights:</span><div class="dz__box"><span class="type">drop pdf/png</span></div></div>
+        <div class="dz"><span class="dz__label type">Accommodations:</span><div class="dz__box"><span class="type">drop pdf/png</span></div></div>
+        <div class="dz"><span class="dz__label type">Others: <small>(eg., attractions)</small></span><div class="dz__box"><span class="type">drop pdf/png</span></div></div>
+      </div>
+      <p class="code dz__note">Uploads coming soon — email your files after your brief <span class="tbc">[TBC]</span></p>
+
+      <div class="airmail__rule" aria-hidden="true"></div>
+      <div class="start__submit"><button class="btn btn--outline" type="submit">Send brief →</button><span class="code">No fee to ask</span></div>
     </form>
   </main>
 
