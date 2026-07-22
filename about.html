@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>(function(){try{var ok=['sorbet','lagoon','ultra','meadow','punch'];var p=new URLSearchParams(location.search).get('theme');var t=(p&&ok.indexOf(p)>=0)?p:(localStorage.getItem('sct-theme')||'lagoon');if(ok.indexOf(t)<0)t='lagoon';document.documentElement.setAttribute('data-theme',t);if(p&&ok.indexOf(p)>=0)localStorage.setItem('sct-theme',t);}catch(e){}})();</script>
-  <title>Serena Chua Travel — About</title>
+  <title>Serenely Yours — About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Fredoka:wght@500;600;700&family=Unbounded:wght@700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Pinyon+Script&family=Special+Elite&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="page-about light">
+<body class="page-about">
 
   <nav class="nav">
-    <a class="nav__brand" href="index.html">SERENA CHUA<b>·</b>TRAVEL</a>
-    <button class="nav__toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">Menu</button>
+    <button class="nav__toggle" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')">Menu</button>
     <div class="nav__links">
-      <a href="how-it-works.html">How it works</a>
-      <a href="sample.html">Sample</a>
+      <a href="index.html">Home</a>
       <a href="about.html" aria-current="page">About</a>
-      <a href="contact.html">Start</a>
+      <a href="how-it-works.html">Gist</a>
+      <a href="sample.html">Sample</a>
     </div>
-    <span class="nav__code">SCT·004</span>
+    <a class="nav__brand" href="index.html">Serenely Yours,</a>
+    <a class="nav__cta" href="contact.html">Start</a>
   </nav>
 
   <main class="wrap">
@@ -47,8 +46,8 @@
   </main>
 
   <footer class="foot">
-    <span><span class="foot__mark">✦</span> Serena Chua Travel</span>
-    <a href="contact.html">Start a brief →</a>
+    <span class="foot__mark script">Serenely Yours,</span>
+    <span>Bespoke itinerary planning · <a href="mailto:hello@example.com">hello@serenachua.travel</a> <span class="tbc">[TBC]</span></span>
   </footer>
 
 </body>
