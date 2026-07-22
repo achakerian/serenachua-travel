@@ -23,53 +23,31 @@
     <a class="nav__cta" href="contact.html">Start</a>
   </nav>
 
-  <main class="wrap">
-    <header class="sample-head">
-      <span class="code">A sample day</span>
-      <h1>One day, two ways.</h1>
-      <p>Same day, same you — for any city. Choose a plan timed to the quarter-hour, or one that hands you options for each part of the day. This is the actual PDF you'd receive; flip the format.</p>
-      <p class="sample-meta">Your destination · Day 01 · Wakes 07:30 · Mid budget</p>
-    </header>
+  <main class="wrap sample">
+    <h1 class="sample__head italic-display">Previously on…</h1>
+    <p class="code">The actual PDF you'd receive — planned to the quarter-hour, or opened up with options.</p>
 
-    <section class="sample">
+    <section class="scroll">
+      <div class="scroll__rod scroll__rod--top" aria-hidden="true"></div>
       <input type="radio" name="fmt" id="fmt-strict" class="seg-input" checked>
       <input type="radio" name="fmt" id="fmt-options" class="seg-input">
       <div class="seg" role="tablist">
         <label for="fmt-strict">Strict · quarter-hour</label>
         <label for="fmt-options">Options · your pick</label>
       </div>
-      <p class="seg-cap">The same day as a finished PDF — planned to the minute, or opened up so you choose as you go.</p>
-
-      <!-- STRICT -->
-      <div class="fmt fmt--strict">
-        <div class="viewer">
-          <div class="viewer__bar">
-            <span class="viewer__dots"><i></i><i></i><i></i></span>
-            <span class="viewer__file">day-01 · strict.pdf</span>
-            <a class="viewer__dl" href="pdf/sample-strict.pdf" target="_blank" rel="noopener">Open ↗</a>
-          </div>
+      <div class="scroll__paper">
+        <div class="fmt fmt--strict">
           <iframe class="viewer__frame" src="pdf/sample-strict.pdf#toolbar=0&amp;view=FitH" title="Sample itinerary — strict (PDF)" loading="lazy"></iframe>
         </div>
-      </div>
-
-      <!-- OPTIONS -->
-      <div class="fmt fmt--options">
-        <div class="viewer">
-          <div class="viewer__bar">
-            <span class="viewer__dots"><i></i><i></i><i></i></span>
-            <span class="viewer__file">day-01 · options.pdf</span>
-            <a class="viewer__dl" href="pdf/sample-options.pdf" target="_blank" rel="noopener">Open ↗</a>
-          </div>
+        <div class="fmt fmt--options">
           <iframe class="viewer__frame" src="pdf/sample-options.pdf#toolbar=0&amp;view=FitH" title="Sample itinerary — options (PDF)" loading="lazy"></iframe>
         </div>
       </div>
-
-      <p class="viewer__note">Preview renders in your browser's PDF viewer. Can't see it? Download <a href="pdf/sample-strict.pdf" download>strict</a> or <a href="pdf/sample-options.pdf" download>options</a>.</p>
+      <div class="scroll__rod scroll__rod--bottom" aria-hidden="true"></div>
     </section>
 
-    <div class="home__cta" style="padding-bottom:8vh">
-      <a class="btn btn--ghost-dark" href="contact.html">Brief me on your trip <span class="btn__arrow">→</span></a>
-    </div>
+    <p class="viewer__note code">Can't see it? Download <a href="pdf/sample-strict.pdf" download>strict</a> or <a href="pdf/sample-options.pdf" download>options</a>.</p>
+    <div class="sample__cta"><a class="btn btn--outline" href="contact.html">Brief me on your trip →</a></div>
   </main>
 
   <footer class="foot">
