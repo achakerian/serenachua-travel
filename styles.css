@@ -40,19 +40,17 @@ a{ color:inherit; }
   padding:13px 26px; border-radius:var(--radius); cursor:pointer; transition:background .18s, color .18s; }
 .btn--outline{ color:var(--cream); border:1.5px solid var(--cream); background:none; }
 .btn--outline:hover{ background:var(--cream); color:var(--wine); }
-.btn--solid{ color:var(--cream); background:var(--mauve); border:1.5px solid var(--mauve); }
-.btn--solid:hover{ filter:brightness(1.08); }
 
 /* nav — mauve band, centred script brand */
-.nav{ position:relative; display:flex; align-items:center; justify-content:space-between;
+.nav{ position:relative; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; column-gap:20px;
   background:var(--mauve); color:var(--cream); padding:18px 32px; }
-.nav__links{ display:flex; gap:34px; }
+.nav__links{ display:flex; gap:30px; justify-self:start; min-width:0; }
 .nav__links a{ font-family:var(--type); font-size:14px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; opacity:.85; }
 .nav__links a:hover, .nav__links a[aria-current="page"]{ opacity:1; font-weight:400; color:#fff; }
-.nav__brand{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-  font-family:var(--script); font-size:40px; color:var(--cream); text-decoration:none; white-space:nowrap; }
+.nav__brand{ position:static; justify-self:center; white-space:nowrap;
+  font-family:var(--script); font-size:clamp(28px,3.2vw,40px); color:var(--cream); text-decoration:none; }
 .nav__cta{ font-family:var(--type); font-size:13px; letter-spacing:.16em; text-transform:uppercase;
-  text-decoration:none; color:var(--cream); border:1.5px solid var(--cream); padding:12px 30px; }
+  text-decoration:none; color:var(--cream); border:1.5px solid var(--cream); padding:12px 30px; justify-self:end; }
 .nav__cta:hover{ background:var(--cream); color:var(--wine); }
 .nav__cta[aria-current="page"]{ background:var(--cream); color:var(--wine); }
 .nav__toggle{ display:none; }
@@ -64,8 +62,8 @@ a{ color:inherit; }
 
 /* responsive nav */
 @media (max-width:780px){
-  .nav{ flex-wrap:wrap; }
-  .nav__brand{ position:static; transform:none; order:-1; width:100%; text-align:center; margin-bottom:10px; font-size:30px; }
+  .nav{ display:flex; flex-wrap:wrap; }
+  .nav__brand{ order:-1; width:100%; text-align:center; justify-self:auto; margin-bottom:10px; font-size:30px; }
   .nav__toggle{ display:inline-block; font-family:var(--type); font-size:13px; letter-spacing:.14em;
     text-transform:uppercase; background:none; border:1px solid var(--cream); color:var(--cream); padding:8px 16px; border-radius:var(--radius); }
   .nav__cta{ font-size:12px; letter-spacing:.1em; padding:10px 18px; }
@@ -166,6 +164,7 @@ a{ color:inherit; }
 .seg label{ font-family:var(--type); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream-dim);
   border:1px solid var(--wine-line); border-radius:999px; padding:9px 18px; cursor:pointer; }
 #fmt-strict:checked ~ .seg label[for="fmt-strict"], #fmt-options:checked ~ .seg label[for="fmt-options"]{ background:var(--mauve); color:var(--cream); border-color:var(--mauve); }
+#fmt-strict:focus-visible ~ .seg label[for="fmt-strict"], #fmt-options:focus-visible ~ .seg label[for="fmt-options"]{ outline:2px solid var(--cream); outline-offset:2px; }
 .viewer__frame{ width:100%; height:560px; border:none; background:var(--cream); display:block; }
 .fmt--options{ display:none; } .fmt--strict{ display:block; }
 #fmt-options:checked ~ .scroll__paper .fmt--options{ display:block; }
@@ -234,6 +233,7 @@ a{ color:inherit; }
   border:1px solid var(--wine-line); border-radius:999px; padding:8px 16px; cursor:pointer; }
 .pill input{ position:absolute; opacity:0; width:0; }
 .pill:has(input:checked){ background:var(--mauve); color:var(--cream); border-color:var(--mauve); }
+.pill:has(input:focus-visible){ outline:2px solid var(--cream); outline-offset:2px; }
 
 .dropzones{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin:6vh 0 10px; }
 .dz{ text-align:center; } .dz__label{ display:block; color:var(--cream); margin-bottom:12px; letter-spacing:.06em; }
@@ -249,6 +249,7 @@ a{ color:inherit; }
    a11y + responsive
    ===================================================================== */
 :focus-visible { outline: 2px solid var(--mauve); outline-offset: 3px; }
+.nav a:focus-visible, .nav__cta:focus-visible, .nav__toggle:focus-visible{ outline-color:var(--cream); }
 
 @media (max-width: 520px) {
   .wrap { padding: 0 20px; }

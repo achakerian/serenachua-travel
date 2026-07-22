@@ -15,7 +15,7 @@
   <nav class="nav">
     <button class="nav__toggle" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')">Menu</button>
     <div class="nav__links">
-      <a href="index.html">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="how-it-works.html">Gist</a>
       <a href="sample.html">Sample</a>
@@ -75,9 +75,10 @@
   <script>
   (function(){
     var c=document.querySelector('[data-carousel]'); if(!c) return;
-    var track=c.querySelector('.carousel__track'), dots=c.querySelectorAll('.carousel__dots i');
+    var dots=c.querySelectorAll('.carousel__dots i');
     var cards=c.querySelectorAll('.ll'), i=0;
-    function go(n){ i=(n+cards.length)%cards.length; cards[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+    var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function go(n){ i=(n+cards.length)%cards.length; cards[i].scrollIntoView({behavior: rm ? 'auto' : 'smooth',inline:'center',block:'nearest'});
       dots.forEach(function(d,k){ d.classList.toggle('on',k===i); }); }
     c.querySelector('.carousel__nav--prev').onclick=function(){ go(i-1); };
     c.querySelector('.carousel__nav--next').onclick=function(){ go(i+1); };
