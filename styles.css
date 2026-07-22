@@ -89,56 +89,47 @@ body.dark .slot__time { color: var(--on-grad); }
 body.dark .slot__note { color: var(--on-grad-muted); }
 
 /* =====================================================================
-   PAGE: HOME — gradient hero + floating colour blobs
+   PAGE: HOME — hero, Dear Passenger letter, Love Letters carousel, teaser
    ===================================================================== */
-body.page-home { position: relative; overflow-x: clip; }
-body.page-home::before, body.page-home::after { content: ""; position: fixed; border-radius: 50%; filter: blur(80px); z-index: 0; pointer-events: none; }
-body.page-home::before { width: 540px; height: 540px; background: var(--c3); opacity: .5; top: -140px; right: -90px; mix-blend-mode: screen; }
-body.page-home::after  { width: 480px; height: 480px; background: var(--c1); opacity: .45; bottom: -160px; left: -110px; mix-blend-mode: screen; }
-body.page-home .nav, body.page-home main, body.page-home .foot { position: relative; z-index: 1; }
+.hero{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding:7vh 28px 9vh; }
+.hero__title{ font-size:clamp(48px,7vw,104px); color:var(--rose-faded); margin:0; }
+.hero__tag{ font-size:clamp(30px,4.5vw,60px); color:var(--cream); margin:.1em 0 .6em; }
+.hero__sub{ max-width:34ch; color:var(--cream-dim); margin:0 0 1.6em; }
 
-.home { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 8vh 0 6vh; }
-.home__kicker { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-.home__kicker .code { color: var(--on-grad); }
-.home__kicker .line { height: 2px; border-radius: 2px; background: color-mix(in srgb, var(--on-grad) 40%, transparent); flex: 1; }
-.home__title { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(52px, 8vw, 108px); line-height: .88; letter-spacing: -.02em; margin: 0; color: var(--on-grad); }
-.home__title span { color: var(--on-grad); -webkit-text-stroke: 2px var(--on-grad); -webkit-text-fill-color: transparent; }
-.home__sub { max-width: 44ch; margin: 24px 0 32px; color: var(--on-grad-muted); font-size: clamp(16px, 1.6vw, 18px); }
-.home__cta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-.home__cta .note { color: var(--on-grad-muted); font-family: var(--mono); font-size: 12px; letter-spacing: .08em; }
+/* torn lined-paper letter */
+.letter{ position:relative; background:var(--paper); color:var(--ink);
+  padding:52px 46px 60px; transform:rotate(2deg); box-shadow:0 24px 50px -18px rgba(0,0,0,.55);
+  background-image:repeating-linear-gradient(180deg, transparent 0 33px, rgba(60,40,50,.16) 33px 34px);
+  clip-path:polygon(0 2%,8% 0,22% 3%,38% 0,54% 3%,70% 0,86% 2%,100% 0,99% 15%,100% 34%,98% 52%,100% 70%,99% 88%,100% 100%,80% 98%,62% 100%,44% 98%,26% 100%,10% 99%,0 100%,1% 76%,0 54%,2% 32%,0 14%); }
+.letter__body p{ margin:0 0 26px; font-size:22px; }
+.letter__hi{ font-size:30px !important; transform:rotate(-1.5deg); }
+.letter__sign{ margin-top:28px; }
+.letter__sign .script{ font-size:38px; }
 
-/* itinerary card (the day) — frosted over the gradient */
-.daycard { border: 1px solid rgba(255,255,255,.28); background: color-mix(in srgb, var(--bone) 16%, transparent); border-radius: var(--radius); overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); }
-.daycard__top { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 22px; border-bottom: 1px solid rgba(255,255,255,.22); }
-.daycard__top h2 { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 22px; margin: 0; letter-spacing: .02em; color: var(--on-grad); }
-.daycard .agenda { border-top: none; padding: 6px 22px 12px; }
-.daycard .agenda .slot { border-bottom-color: rgba(255,255,255,.16); }
-.daycard .slot__name { color: var(--on-grad); }
-.daycard .slot__time { color: var(--on-grad); opacity: .85; }
-.daycard .slot__note { color: var(--on-grad-muted); }
+/* love letters carousel */
+.loveletters{ padding:6vh 28px; text-align:center; }
+.loveletters__head{ font-size:clamp(30px,4vw,52px); color:var(--cream); margin:0 0 6px; }
+.carousel{ position:relative; margin-top:40px; }
+.carousel__track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:0; scrollbar-width:none; }
+.carousel__track::-webkit-scrollbar{ display:none; }
+.ll{ flex:0 0 100%; scroll-snap-align:center; margin:0; padding:0 8%; }
+.ll blockquote{ font-size:clamp(18px,2.2vw,26px); text-transform:uppercase; letter-spacing:.04em; color:var(--cream); margin:0 0 28px; }
+.ll figcaption{ color:var(--cream-dim); letter-spacing:.1em; }
+.carousel__nav{ position:absolute; top:36%; background:none; border:none; color:var(--cream); font-size:40px; cursor:pointer; line-height:1; }
+.carousel__nav--prev{ left:0; } .carousel__nav--next{ right:0; }
+.carousel__dots{ display:flex; gap:10px; justify-content:center; margin-top:26px; }
+.carousel__dots i{ width:9px; height:9px; border-radius:50%; background:var(--wine-line); }
+.carousel__dots i.on{ background:var(--cream); }
 
-/* testimonials — frosted quote cards over the gradient */
-.quotes-wrap { padding: 0 0 3vh; }
-.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.quote {
-  margin: 0; background: color-mix(in srgb, var(--bone) 15%, transparent);
-  border: 1px solid rgba(255,255,255,.28); border-radius: var(--radius); padding: 24px;
-  backdrop-filter: blur(8px);
-}
-.quote p { margin: 0 0 16px; font-size: 18px; line-height: 1.42; color: var(--on-grad); font-weight: 500; }
-.quote figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--on-grad-muted); }
-@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
-
-/* reveal */
-@media (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
-  .reveal:nth-child(2){animation-delay:.08s}.reveal:nth-child(3){animation-delay:.16s}
-  @keyframes rise { to { opacity: 1; transform: none; } }
-  body.page-home::before { animation: float1 16s ease-in-out infinite; }
-  body.page-home::after  { animation: float2 20s ease-in-out infinite; }
-  @keyframes float1 { 50% { transform: translate(-34px, 46px) scale(1.12); } }
-  @keyframes float2 { 50% { transform: translate(34px, -32px) scale(1.06); } }
-}
+/* itinerary teaser */
+.teaser{ padding:2vh 28px 9vh; text-align:center; }
+.teaser__frame{ display:inline-flex; flex-direction:column; align-items:center; gap:14px; padding:34px 48px;
+  border:2px solid var(--wine-line); border-radius:var(--radius); text-decoration:none; }
+.teaser__label{ display:block; }
+.teaser__doc{ width:160px; height:200px; background:var(--paper); box-shadow:0 12px 28px -14px rgba(0,0,0,.6);
+  background-image:repeating-linear-gradient(180deg,transparent 0 15px,rgba(60,40,50,.12) 15px 16px); }
+.teaser__cta{ color:var(--cream); letter-spacing:.1em; }
+@media (max-width:780px){ .hero{ grid-template-columns:1fr; } .letter{ transform:none; } }
 
 /* =====================================================================
    PAGE: HOW IT WORKS
@@ -246,7 +237,6 @@ body.page-contact { background: var(--bone-soft); }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto; } }
 
 @media (max-width: 860px) {
-  .home { grid-template-columns: 1fr; gap: 40px; padding-top: 6vh; }
   .flow { grid-template-columns: 1fr; gap: 16px; }
   .passport { grid-template-columns: 1fr; gap: 32px; }
 }

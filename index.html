@@ -24,86 +24,46 @@
     <a class="nav__cta" href="contact.html">Start</a>
   </nav>
 
-  <main class="wrap">
-    <section class="home">
-      <div>
-        <div class="home__kicker reveal">
-          <span class="code">Bespoke itinerary planning</span>
-          <span class="line"></span>
-        </div>
-        <h1 class="home__title reveal">Your days,<br>dialled&nbsp;in<span>.</span></h1>
-        <p class="home__sub reveal">You bring the city, the hotel and the dates. I plan what you actually do each day — down to the quarter-hour, or loose with options — tuned to when you wake, what you love, and your budget.</p>
-        <div class="home__cta reveal">
-          <a class="btn btn--amber" href="contact.html">Start your brief <span class="btn__arrow">→</span></a>
-          <span class="note">A plan comes back, no fixed packages.</span>
-        </div>
+  <main>
+    <section class="hero wrap">
+      <div class="hero__copy">
+        <h1 class="hero__title display">Your time<br>is precious.</h1>
+        <p class="hero__tag italic-display">waste mine instead.</p>
+        <p class="hero__sub">You bring the city, the hotel and the dates. I plan what you actually do each day — tuned to when you wake, what you love, and your budget. No fixed packages; just your days, handled.</p>
+        <a class="btn btn--outline" href="contact.html">Start your brief →</a>
       </div>
+      <aside class="letter" aria-label="A note from Serena">
+        <div class="letter__body type">
+          <p class="letter__hi">Dear Passenger,</p>
+          <p>Do nothing.</p>
+          <p>Well… except pack your bags and prepare for the adventure of a lifetime.</p>
+          <p>The rest? Leave it to me.</p>
+        </div>
+        <p class="letter__sign"><span class="script">Serenely Yours,</span><br><span class="type">Serena</span></p>
+      </aside>
+    </section>
 
-      <!-- signature: how it feels, in stickers -->
-      <div class="stickers reveal">
-        <span class="sticker sticker--white sticker--md" style="--r:-3deg">All sorted <em>✓</em></span>
-        <span class="sticker sticker--ink sticker--sm" style="--r:3deg">No worries</span>
-        <span class="sticker sticker--white sticker--lg" style="--r:-2deg">Easy, fun &amp; exciting</span>
-        <span class="sticker sticker--outline sticker--sm" style="--r:2.5deg">Just show up</span>
-        <span class="sticker sticker--ink sticker--md" style="--r:-2.5deg">Every detail handled</span>
+    <section class="loveletters wrap" aria-label="Love letters">
+      <h2 class="loveletters__head display">Love Letters</h2>
+      <p class="code">Example — real notes land here as trips wrap <span class="tbc">[TBC]</span></p>
+      <div class="carousel" data-carousel>
+        <button class="carousel__nav carousel__nav--prev" aria-label="Previous">‹</button>
+        <div class="carousel__track">
+          <figure class="ll"><blockquote class="type">All sorted before we'd even landed. We just turned up and enjoyed it.</blockquote><figcaption class="type">Serenely,<br>Adam &amp; Maya</figcaption></figure>
+          <figure class="ll"><blockquote class="type">No stress, no spreadsheets, no wasted days. Easily the best trip we've taken.</blockquote><figcaption class="type">Serenely,<br>Priya</figcaption></figure>
+          <figure class="ll"><blockquote class="type">Every day was easy, fun, and exactly us — right down to where we ate.</blockquote><figcaption class="type">Serenely,<br>The Alvarez family</figcaption></figure>
+        </div>
+        <button class="carousel__nav carousel__nav--next" aria-label="Next">›</button>
+        <div class="carousel__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
       </div>
     </section>
 
-    <!-- testimonials -->
-    <section class="quotes-wrap" aria-label="Kind words">
-      <div class="themes__head">
-        <span class="code">Kind words</span>
-        <span class="themes__hint">Example — real reviews land here as trips wrap <span class="tbc">[TBC]</span></span>
-      </div>
-      <div class="quotes">
-        <figure class="quote">
-          <p>“All sorted before we'd even landed. We just turned up and enjoyed it.”</p>
-          <figcaption>Maya &amp; Tom · city break</figcaption>
-        </figure>
-        <figure class="quote">
-          <p>“No stress, no spreadsheets, no wasted days. Easily the best trip we've taken.”</p>
-          <figcaption>Priya · solo trip</figcaption>
-        </figure>
-        <figure class="quote">
-          <p>“Every day was easy, fun, and exactly us — right down to where we ate.”</p>
-          <figcaption>The Alvarez family · 10 days</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- THEME PICKER — live-switches the whole site -->
-    <section class="themes" aria-label="Choose a theme">
-      <div class="themes__head">
-        <span class="code">Pick a theme</span>
-        <span class="themes__hint">Live preview · your choice follows you across the site</span>
-      </div>
-      <div class="themes__grid">
-        <button class="tcard" data-t="sorbet" onclick="setTheme('sorbet')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Fraunces',serif">Sorbet</span>
-          <span class="tcard__tag">Coral · pink · gold</span>
-          <span class="tcard__grad" style="background:linear-gradient(125deg,#ff7a59,#ff4d8d 52%,#ffb64d)"></span>
-        </button>
-        <button class="tcard" data-t="lagoon" onclick="setTheme('lagoon')" aria-pressed="true">
-          <span class="tcard__name" style="font-family:'Space Grotesk',sans-serif">Lagoon</span>
-          <span class="tcard__tag">Teal · blue · violet</span>
-          <span class="tcard__grad" style="background:linear-gradient(125deg,#2ad0c3,#2f6bff 52%,#7b5cff)"></span>
-        </button>
-        <button class="tcard" data-t="ultra" onclick="setTheme('ultra')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Bricolage Grotesque',sans-serif">Ultra</span>
-          <span class="tcard__tag">Violet · fuchsia · blue</span>
-          <span class="tcard__grad" style="background:linear-gradient(125deg,#7a2cff,#ff3ea5 54%,#3a7bff)"></span>
-        </button>
-        <button class="tcard" data-t="meadow" onclick="setTheme('meadow')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Fredoka',sans-serif">Meadow</span>
-          <span class="tcard__tag">Lime · emerald · aqua</span>
-          <span class="tcard__grad" style="background:linear-gradient(125deg,#aef05a,#22c98a 52%,#12c2c2)"></span>
-        </button>
-        <button class="tcard" data-t="punch" onclick="setTheme('punch')" aria-pressed="false">
-          <span class="tcard__name" style="font-family:'Unbounded',sans-serif">Punch</span>
-          <span class="tcard__tag">Magenta · red · amber</span>
-          <span class="tcard__grad" style="background:linear-gradient(125deg,#ff2e7e,#ff5e3a 52%,#ffc531)"></span>
-        </button>
-      </div>
+    <section class="teaser wrap">
+      <a class="teaser__frame" href="sample.html" aria-label="See a sample itinerary">
+        <span class="teaser__label code">Previously on…</span>
+        <span class="teaser__doc"></span>
+        <span class="teaser__cta type">See a sample day →</span>
+      </a>
     </section>
   </main>
 
@@ -113,20 +73,15 @@
   </footer>
 
   <script>
-    function setTheme(t){
-      document.documentElement.setAttribute('data-theme', t);
-      try { localStorage.setItem('sct-theme', t); } catch(e){}
-      document.querySelectorAll('.tcard').forEach(function(c){
-        c.setAttribute('aria-pressed', c.getAttribute('data-t') === t ? 'true' : 'false');
-      });
-    }
-    // reflect the theme applied on load (from ?theme= or storage)
-    (function(){
-      var t = document.documentElement.getAttribute('data-theme') || 'lagoon';
-      document.querySelectorAll('.tcard').forEach(function(c){
-        c.setAttribute('aria-pressed', c.getAttribute('data-t') === t ? 'true' : 'false');
-      });
-    })();
+  (function(){
+    var c=document.querySelector('[data-carousel]'); if(!c) return;
+    var track=c.querySelector('.carousel__track'), dots=c.querySelectorAll('.carousel__dots i');
+    var cards=c.querySelectorAll('.ll'), i=0;
+    function go(n){ i=(n+cards.length)%cards.length; cards[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+      dots.forEach(function(d,k){ d.classList.toggle('on',k===i); }); }
+    c.querySelector('.carousel__nav--prev').onclick=function(){ go(i-1); };
+    c.querySelector('.carousel__nav--next').onclick=function(){ go(i+1); };
+  })();
   </script>
 
 </body>
