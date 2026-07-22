@@ -132,25 +132,15 @@ body.dark .slot__note { color: var(--on-grad-muted); }
 @media (max-width:780px){ .hero{ grid-template-columns:1fr; } .letter{ transform:none; } }
 
 /* =====================================================================
-   PAGE: HOW IT WORKS
+   PAGE: GIST — italic lead + dashed typewriter step cards
    ===================================================================== */
-body.page-how { background: var(--bone); }
-.how-head { padding: 8vh 0 3vh; }
-.how-head h1 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(44px, 8vw, 96px); line-height: .9; margin: 10px 0 0; }
-.how-head p { max-width: 52ch; margin: 20px 0 0; color: var(--muted); }
-
-.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 5vh; }
-.flow__step { border-radius: var(--radius); padding: 24px; background: var(--bone-soft); border: 1px solid var(--bone-line); }
-.flow__num { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--amber-deep); }
-.flow__step h3 { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: clamp(24px, 3vw, 32px); margin: 8px 0 8px; line-height: .98; }
-.flow__step p { margin: 0; color: var(--muted); font-size: 15px; }
-
-.dials { border-top: 1px solid var(--bone-line); padding: 4vh 0 8vh; }
-.dials__lead { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-.dials__grid { display: flex; flex-wrap: wrap; gap: 12px; }
-.dial { border: none; padding: 14px 18px; border-radius: 999px; color: #fff; background: var(--grad); box-shadow: 0 10px 22px -12px var(--amber); }
-.dial b { display: block; font-family: var(--display); text-transform: uppercase; font-size: 19px; letter-spacing: .02em; line-height: 1; }
-.dial span { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+.gist{ padding:6vh 28px 10vh; }
+.gist__lead{ font-size:clamp(34px,5.5vw,76px); color:var(--rose-faded); margin:.2em 0 8vh; }
+.gist__cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+.gcard{ border:1.5px dashed var(--wine-line); border-radius:var(--radius); padding:40px 30px; text-align:center; }
+.gcard h3{ font-size:20px; text-transform:uppercase; letter-spacing:.06em; color:var(--cream); margin:0 0 22px; line-height:1.5; }
+.gcard p{ font-size:15px; letter-spacing:.03em; color:var(--cream-dim); text-transform:uppercase; line-height:1.9; margin:0; }
+@media (max-width:780px){ .gist__cards{ grid-template-columns:1fr; } }
 
 /* =====================================================================
    PAGE: SAMPLE
@@ -252,9 +242,6 @@ body.page-contact { background: var(--bone-soft); }
 :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto; } }
 
-@media (max-width: 860px) {
-  .flow { grid-template-columns: 1fr; gap: 16px; }
-}
 @media (max-width: 520px) {
   .wrap { padding: 0 20px; }
   .form__row { grid-template-columns: 1fr; }
