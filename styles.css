@@ -90,11 +90,25 @@ a{ color:inherit; }
 .hero__tag{ font-size:clamp(30px,4.5vw,60px); color:var(--cream); margin:.1em 0 .6em; }
 .hero__sub{ max-width:34ch; color:var(--cream-dim); margin:0 0 1.6em; }
 
-/* torn lined-paper letter */
-.letter{ position:relative; background:var(--paper); color:var(--ink);
-  padding:52px 46px 60px; transform:rotate(2deg); box-shadow:0 24px 50px -18px rgba(0,0,0,.55);
-  background-image:repeating-linear-gradient(180deg, transparent 0 33px, rgba(60,40,50,.16) 33px 34px);
-  clip-path:polygon(0 2%,8% 0,22% 3%,38% 0,54% 3%,70% 0,86% 2%,100% 0,99% 15%,100% 34%,98% 52%,100% 70%,99% 88%,100% 100%,80% 98%,62% 100%,44% 98%,26% 100%,10% 99%,0 100%,1% 76%,0 54%,2% 32%,0 14%); }
+/* torn lined-paper letter — procedural parchment matching the sample PDF:
+   warm cream base + SVG fractal-noise fibre + speckles + ruled lines, with an
+   organic torn edge via an SVG displacement mask (drop-shadow, not box-shadow,
+   so the shadow follows the torn silhouette rather than being clipped by it). */
+.letter{ position:relative; color:var(--ink); padding:60px 52px 66px; transform:rotate(1.8deg);
+  background-color:#ecdcd2;
+  background-image:
+    radial-gradient(115% 130% at 50% 42%, transparent 52%, rgba(96,58,46,.22) 100%),
+    radial-gradient(circle at 21% 15%, rgba(83,53,45,.6) 0 1.6px, transparent 2.4px),
+    radial-gradient(circle at 68% 41%, rgba(83,53,45,.5) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle at 40% 62%, rgba(83,53,45,.45) 0 1.3px, transparent 2px),
+    radial-gradient(circle at 86% 66%, rgba(83,53,45,.42) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle at 57% 88%, rgba(83,53,45,.4) 0 1.2px, transparent 2px),
+    repeating-linear-gradient(180deg, transparent 0 32px, rgba(74,46,40,.19) 32px 33.5px),
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='260'%20height='260'%3E%3Cfilter%20id='f'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='260'%20height='260'%20filter='url(%23f)'%20opacity='0.82'/%3E%3C/svg%3E"),
+    linear-gradient(115deg, #f3e9e1 0%, #e6d4c9 52%, #eee0d5 100%);
+  background-blend-mode:multiply,multiply,multiply,multiply,multiply,multiply,multiply,soft-light,normal;
+  filter:drop-shadow(0 22px 30px rgba(0,0,0,.5));
+  clip-path:polygon(0.0% 0.97%, 6.67% 0.2%, 13.33% 1.68%, 20.0% 1.59%, 26.67% 2.23%, 33.33% 2.41%, 40.0% 2.62%, 46.67% 0.0%, 53.33% 0.2%, 60.0% 0.0%, 66.67% 0.0%, 73.33% 2.63%, 80.0% 2.21%, 86.67% 0.05%, 93.33% 0.05%, 100.0% 2.08%, 96.18% 0.0%, 98.05% 5.88%, 96.6% 11.76%, 98.79% 17.65%, 96.48% 23.53%, 97.34% 29.41%, 97.63% 35.29%, 93.94% 41.18%, 98.4% 47.06%, 98.46% 52.94%, 98.91% 58.82%, 95.63% 64.71%, 96.13% 70.59%, 98.89% 76.47%, 96.36% 82.35%, 96.42% 88.24%, 98.16% 94.12%, 98.01% 100.0%, 100.0% 98.91%, 93.33% 96.54%, 86.67% 98.46%, 80.0% 97.2%, 73.33% 99.37%, 66.67% 96.42%, 60.0% 96.68%, 53.33% 96.87%, 46.67% 97.08%, 40.0% 98.53%, 33.33% 94.81%, 26.67% 96.3%, 20.0% 95.85%, 13.33% 95.57%, 6.67% 96.49%, 0.0% 96.06%, 1.56% 100.0%, 1.39% 94.12%, 2.89% 88.24%, 0.0% 82.35%, 2.79% 76.47%, 1.25% 70.59%, 0.04% 64.71%, 0.0% 58.82%, 1.54% 52.94%, 1.85% 47.06%, 2.66% 41.18%, 0.0% 35.29%, 1.6% 29.41%, 2.53% 23.53%, 1.51% 17.65%, 2.27% 11.76%, 0.26% 5.88%, 1.54% 0.0%); }
 .letter__body p{ margin:0 0 26px; font-size:22px; }
 .letter__hi{ font-size:30px !important; transform:rotate(-1.5deg); }
 .letter__sign{ margin-top:28px; }
