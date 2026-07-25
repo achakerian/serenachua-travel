@@ -81,7 +81,7 @@ a{ color:inherit; }
 }
 
 /* =====================================================================
-   PAGE: HOME — hero, Dear Passenger letter, Love Letters carousel, teaser
+   PAGE: HOME — hero, Dear Passenger letter, Love Letters carousel
    ===================================================================== */
 .hero{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding:7vh 28px 9vh; }
 .hero__title{ font-size:clamp(48px,7vw,104px); color:var(--rose-faded); margin:0; }
@@ -127,14 +127,6 @@ a{ color:inherit; }
 .carousel__dots i{ width:9px; height:9px; border-radius:50%; background:var(--wine-line); }
 .carousel__dots i.on{ background:var(--cream); }
 
-/* itinerary teaser */
-.teaser{ padding:2vh 28px 9vh; text-align:center; }
-.teaser__frame{ display:inline-flex; flex-direction:column; align-items:center; gap:14px; padding:34px 48px;
-  border:2px solid var(--wine-line); border-radius:var(--radius); text-decoration:none; }
-.teaser__label{ display:block; }
-.teaser__doc{ width:160px; height:200px; background:var(--paper); box-shadow:0 12px 28px -14px rgba(0,0,0,.6);
-  background-image:repeating-linear-gradient(180deg,transparent 0 15px,rgba(60,40,50,.12) 15px 16px); }
-.teaser__cta{ color:var(--cream); letter-spacing:.1em; }
 @media (max-width:780px){ .hero{ grid-template-columns:1fr; } .letter{ transform:none; } }
 
 /* =====================================================================
